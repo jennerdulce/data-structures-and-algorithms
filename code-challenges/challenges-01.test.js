@@ -87,19 +87,19 @@ Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
 // Unable to figure out how to replace the items being that the the array is declared as a 'const'
 const fizzbuzz = (arr) => {
-  let jenner = [];
-  arr.forEach( (item, index, array) => {
+  let outputList = [];
+  arr.forEach( item => {
     if (item % 3 === 0 && item % 5 === 0){
-      jenner.push(array.index) = 'Fizz Buzz';
+      outputList.push('Fizz Buzz');
     } else if (item % 3 === 0){
-      jenner.push(item) = 'Fizz';
+      outputList.push('Fizz');
     } else if (item % 5 === 0){
-      jenner.push(item) = 'Buzz';
+      outputList.push('Buzz');
     } else {
-      jenner.push(item)
+      outputList.push(item);
     }
   });
-  return zzz;
+  return outputList;
 };
 
 // const fizzbuzz = (arr) => {
