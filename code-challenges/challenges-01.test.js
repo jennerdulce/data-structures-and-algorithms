@@ -85,7 +85,7 @@ Iterate over the array using forEach to determine the output based on several ru
 
 Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
-// Unable to figure out how to replace the items being that the the array is declared as a 'const'
+
 const fizzbuzz = (arr) => {
   let outputList = [];
   arr.forEach( item => {
@@ -101,32 +101,6 @@ const fizzbuzz = (arr) => {
   });
   return outputList;
 };
-
-// const fizzbuzz = (arr) => {
-//   arr.forEach( (item, index) => {
-//     if (item % 3 === 0 && item % 5 === 0){
-//       arr.index = 'Fizz Buzz';
-//     } else if (item % 3 === 0){
-//       arr.index = 'Fizz';
-//     } else if (item % 5 === 0){
-//       arr.index = 'Buzz';
-//     }
-//   });
-//   return arr;
-// };
-
-// const fizzbuzz = (arr) => {
-//   arr.forEach( function(item) {
-//     if (item % 3 === 0 && item % 5 === 0){
-//       item = 'Fizz Buzz';
-//     } else if (item % 3 === 0){
-//       item = 'Fizz';
-//     } else if (item % 5 === 0){
-//       item = 'Buzz';
-//     }
-//   });
-//   return arr;
-// };
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
