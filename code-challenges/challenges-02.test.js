@@ -25,8 +25,11 @@ Write a function that appends ' The end.' to a string, and returns the modified 
 ------------------------------------------------------------------------------------------------ */
 
 const appendTheEnd = (str) => {
-  var newString = str.concat(' The end.');
-  return newString;
+  // let newString = str.concat(' The end.');
+  // return newString;
+
+  str += ' The end.';
+  return str;
 };
 
 
