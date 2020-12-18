@@ -170,7 +170,7 @@ const people = [
 
 const sortPeople = (arr) => {
   arr.sort((a, b) => {
-    if (a.lastName > b.lastName){
+    if (a.lastName > b.lastName) {
       return 1;
     } else if (a.lastName < b.lastName) {
       return -1;
@@ -194,14 +194,41 @@ If two people have the same full name, the younger one should come first. Do not
 ------------------------------------------------------------------------------------------------ */
 
 const sortPeopleBetter = (arr) => {
-  // Solution code here...
+  arr.sort((a, b) => {
+
+    if (a.lastName === b.lastName) {
+      if (a.firstName === b.firstName) {
+        if (a.age > b.age) {
+          return 1;
+        } else if (a.age < b.age) {
+          return -1;
+        } else {
+          return 0;
+        }
+      } else if (a.firstName > b.firstName) {
+        return 1;
+      } else if (a.firstName < b.firstName) {
+        return -1;
+      } else {
+        return 0;
+      }
+    } else if (a.lastName > b.lastName) {
+      return 1;
+    } else if (a.lastName < b.lastName) {
+      return -1;
+    } else {
+      return 0;
+    }
+  });
+  return arr;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 10 - Stretch Goal
-
+ 
 Write a function named sortMeetingsByDay that takes in an array of objects, each of which represents a meeting happening a particular day of the week, with a particular start time and end time.
-
+ 
 Sort the meetings by the day on which they happen, Monday-Friday. It does not matter which order meetings come in on a particular day. For example, if there are two meetings on Monday, it does not matter which comes first.
 ------------------------------------------------------------------------------------------------ */
 
@@ -220,16 +247,26 @@ const meetings = [
 ];
 
 const sortMeetingsByDay = (arr) => {
-  // Solution code here...
+  arr.sort((a, b) => {
+    if (a.dayOfWeek.toLowerCase() > b.dayOfWeek.toLowerCase()) {
+      return 1;
+    } else if (a.dayOfWeek.toLowerCase() < b.dayOfWeek.toLowerCase()) {
+      return -1;
+    } else {
+      return 0;
+    }
+  });
+  arr.push(arr.shift());
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 11 - Stretch Goal
-
+ 
 This challenge should use the array of meetings from challenge 9, above.
-
+ 
 Sort the meetings in the order that they start. If two meetings start at the same time on the same day, the shorter meeting should come first.
-
+ 
 You DO NOT need to use your solution to Challenge 9 in completing Challenge 10.
 ------------------------------------------------------------------------------------------------ */
 
@@ -251,16 +288,16 @@ $ = createSnippetWithJQuery(`
 `);
 
 const addPearClass = () => {
-  // Solution code here...
+  $('li:nth-child(3)').addClass('pear');
 };
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
-
+ 
 All the code below will verify that your functions are working to solve the challenges.
-
+ 
 DO NOT CHANGE any of the below code.
-
+ 
 Run your tests from the console: jest challenges-03.test.js
 ------------------------------------------------------------------------------------------------ */
 
@@ -349,7 +386,7 @@ describe('Testing challenge 8', () => {
   });
 });
 
-xdescribe('Testing challenge 9', () => {
+describe('Testing challenge 9', () => {
   test('It should sort people with more strict ordering', () => {
     const family = [
       new Person('Casey', 'Codefellows', 55),
@@ -393,7 +430,7 @@ xdescribe('Testing challenge 11', () => {
   });
 });
 
-xdescribe('Testing challenge 12', () => {
+describe('Testing challenge 12', () => {
   test('It should add a class of pear to the thrid li', () => {
     addPearClass();
     expect($('li:nth-child(3)').hasClass('pear')).toBe(true);
