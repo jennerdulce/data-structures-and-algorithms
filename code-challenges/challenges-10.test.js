@@ -7,7 +7,21 @@ Build a simple express server. Connect a '/hello' route that sends a greeting of
 ------------------------------------------------------------------------------------------------ */
 
 const createServer = () => {
-  // Solution code here...
+  const express = require('express');
+  const app = express();
+
+  app.get('/hello', (req, res) => {
+    res.send('Yo wuddup');
+  });
+  app.get('/aboutme', (req, res) => {
+    res.send('Navy Veteran. I have a dog. I love programming and surfing! I also like Ice Cream');
+  });
+  app.get('/favoritefoods', (req, res) => {
+    res.send(['korean food', 'mango', 'ice cream', 'sushi']);
+  });
+  // app.use('*', (req, res) => {
+  //   res.status(404);
+  // });
 
   var server = app.listen(3301, function () {
     var port = server.address().port;
@@ -160,7 +174,7 @@ let findMaleAndFemale = (data) => {
   const x = data.filter(value => {
     return value.gender === 'male' || value.gender === 'female'
   }).map(value => {
-    return value.name
+    return value.name;
   }).join(' and ');
   return x;
 };
@@ -176,7 +190,7 @@ let findShortest = (data) => {
     if (parseInt(acc.height) > parseInt(value.height) || !acc.height){
       acc = value;
     }
-    console.log(acc)
+    console.log(acc);
     return acc;
   }, {}).name;
   return x;
@@ -193,7 +207,7 @@ Run your tests from the console: jest challenges-10.test.js
 
 ------------------------------------------------------------------------------------------------ */
 
-xdescribe('Testing challenge 1', () => {
+describe('Testing challenge 1', () => {
 
   const request = require('supertest');
 
