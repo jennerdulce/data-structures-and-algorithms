@@ -261,8 +261,6 @@ const returnNames = (arr) => {
 };
 
 
-// function someFunction(parameter1, parameter2, para3)
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
  
@@ -337,7 +335,7 @@ const countNumberOfChildren = (arr) => {
       total += value.children.length;
     }
     return total;
-  }, 0)
+  }, 0);
   return x;
 }
 /* ------------------------------------------------------------------------------------------------
@@ -352,11 +350,11 @@ const calculateAverage = (arr) => {
   let x = arr.reduce((total, value, index) => {
     total += value;
     if (index === arr.length - 1){
-      total = total/arr.length
+      total = total/arr.length;
     }
-    return total
-  }, 0)
-  return x
+    return total;
+  }, 0);
+  return x;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -380,9 +378,9 @@ const countPrimeNumbers = (arr) => {
   const x = arr.reduce((acc, value, index) => {
     if(isPrime(value)){
       acc++;
-    };
+    }
     return acc;
-  }, 0)
+  }, 0);
   return x;
 };
 
@@ -426,20 +424,21 @@ const snorlaxData = {
 };
 
 const extractStat = (statName, arr) => {
-  let flag = true
+  let flag = true;
   const x = arr.reduce((object, value, index)=> {
     if (value.stat.name === statName){
       object = value;
-      flag = false
+      flag = false;
     }
 
     if (flag){
-      object = null
+      object = null;
     }
-    return object
 
-  }, {})
-  return x
+    return object;
+
+  }, {});
+  return x;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -456,7 +455,7 @@ const extractChildren = (arr) => {
 
   let regex = /[aA]/g;
   const x = arr.filter(value => {
-    return value.name.match(regex)
+    return value.name.match(regex);
   }).reduce((arr, value) => {
     if(value.children){
       value.children.forEach(value => {
