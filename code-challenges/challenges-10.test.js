@@ -41,15 +41,6 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
 const count = (target, input) => {
-  // let counter = 0
-  // input.map(value => {
-  //   value.map(value =>{
-  //     if (value === target){
-  //       counter++;
-  //     }
-  //   })
-  // })
-  // return counter;
   const x = input.reduce((acc, value) => {
     value.forEach(value => {
       if (value === target) {
@@ -75,7 +66,7 @@ const totalSum = (input) => {
   const x = input.reduce((acc, value) => {
     value.forEach(value => {
       acc += value;
-    })
+    });
     return acc;
   }, 0);
   return x;
@@ -101,7 +92,7 @@ const divisibleByFiveTwoToThePower = (input) => {
       return value % 5 === 0;
     }).map(value => {
       return Math.pow(2, value);
-    })
+    });
     return y;
   });
   return x;
@@ -172,7 +163,7 @@ let starWarsData = [{
 
 let findMaleAndFemale = (data) => {
   const x = data.filter(value => {
-    return value.gender === 'male' || value.gender === 'female'
+    return value.gender === 'male' || value.gender === 'female';
   }).map(value => {
     return value.name;
   }).join(' and ');
