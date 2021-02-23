@@ -16,10 +16,11 @@ Each day, you'll add one new file to this folder to do your work for the day's a
 
 #### TABLE OF CONTENTS
 
-- [Code Challenge: Class 01 - Reverse Array](./javascript/arrayReverse)
+- [Code Challenge: Class 01 - Reverse Array](./javascript/code-challenges/arrayReverse)
+
+- [Code Challenge: Class 02 - Array Shift](./javascript/code-challenges/array-shift)
 
 <!-- - [Code Challenge: Class 01]()
-- [Code Challenge: Class 01]()
 - [Code Challenge: Class 01]()
 - [Code Challenge: Class 01]()
 - [Code Challenge: Class 01]()
