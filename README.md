@@ -20,6 +20,8 @@ Each day, you'll add one new file to this folder to do your work for the day's a
 
 - [Code Challenge: Class 02 - Array Shift](./javascript/code-challenges/array-shift)
 
+- [Code Challenge: Class 03 - Binary Search](./javascript/code-challenges/arrayBinarySearch)
+
 <!-- - [Code Challenge: Class 01]()
 - [Code Challenge: Class 01]()
 - [Code Challenge: Class 01]()
