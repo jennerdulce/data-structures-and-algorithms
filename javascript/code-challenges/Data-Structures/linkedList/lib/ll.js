@@ -122,6 +122,29 @@ class LinkedList {
     string += 'NULL';
     return string;
   }
+
+  kthFromEnd(k) {
+    let current = this.head;
+    let counter = this.head;
+    let length = 0;
+    while (counter) {
+      length++;
+      counter = counter.next;
+    }
+    while (current) {
+      if (length < k ){
+        console.log('length of Linked List is too small');
+        return false;
+      }
+      if (length - 1 === k){
+        console.log(current.value);
+        return current.value;
+      }
+      length--;
+      current = current.next;
+    }
+    return false;
+  }
 }
 
 module.exports = LinkedList;

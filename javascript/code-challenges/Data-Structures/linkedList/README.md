@@ -101,6 +101,16 @@
     - set temp variable to current.next.next, to retrieve the `next` of the node that will be deleted
     - set the `next` value of the current node to the temp variable
 
+##### kthFromEnd(k)
+
+- return false if k is greater than the length of linked list - 1 (start at 0)
+- determine the length of the linked list
+- create a while loop to loop through nodes
+  - return value if length - 1 === k
+  - else reduce length by 1
+  - continue to next node and repeat
+- return false if there is no match
+
 ### BIG O
 
 - insertFront(value):
@@ -131,6 +141,10 @@
   - SPACE: O(n)
   - TIME: O(n)
 
+- kthFromEnd(k);
+  - SPACE: O(n)
+  - TIME: O(n)
+
 ## API
 <!-- Description of each method publicly available to your Linked List -->
 - `.insertFront(value)`
@@ -154,5 +168,12 @@
 - `.delete(value)`
   - deletes the selected node
 
+- `.kthFromEnd(k)`
+  - print out value of node from given k value space away from the end of the linked list
+
+## Collaborations
+
+- Terrence Simms
 
 ![WHITEBOARD](./Whiteboard.jpg)
+![WHITEBOARD](./kthFromEnd.jpg)

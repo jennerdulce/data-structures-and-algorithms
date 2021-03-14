@@ -184,3 +184,36 @@ describe('LinkedList INSERTIONS TESTS', () => {
 });
 
 
+describe('LinkedList KTHFROMEND Tests', () => {
+  it('should return false if k is greater than the length of the linekd list', () => {
+    let newLL = new LinkedList();
+    newLL.append(100).append(200).append(300);
+    expect(newLL.kthFromEnd(99)).toBeFalsy();
+  });
+
+  it('should return false if k is the same length as the linked list', () => {
+    let newLL = new LinkedList();
+    newLL.append(100).append(200).append(300);
+    expect(newLL.kthFromEnd(3)).toBeFalsy();
+  });
+
+  it('should return false if is not a positive interger', () => {
+    let newLL = new LinkedList();
+    newLL.append(100).append(200).append(300);
+    expect(newLL.kthFromEnd(-77777)).toBeFalsy();
+  });
+
+  it('should still work with a linked list with 1 value in it', () => {
+    let newLL = new LinkedList();
+    newLL.append(100);
+    expect(newLL.kthFromEnd(0)).toBe(100);
+  });
+
+  it('should still work with a linked list with 1 value in it', () => {
+    let newLL = new LinkedList();
+    newLL.append(100).append(200).append(300).append(400).append(500);
+    expect(newLL.kthFromEnd(2)).toBe(300);
+  });
+
+});
+
