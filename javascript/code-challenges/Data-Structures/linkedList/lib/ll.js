@@ -123,20 +123,25 @@ class LinkedList {
     return string;
   }
 
-  kthFromEnd(k) {
-    let current = this.head;
+  length() {
     let counter = this.head;
     let length = 0;
     while (counter) {
-      length++;
       counter = counter.next;
+      length++;
     }
+    return length;
+  }
+
+  kthFromEnd(k) {
+    let current = this.head;
+    let length = this.length();
     while (current) {
-      if (length < k ){
+      if (length < k) {
         console.log('length of Linked List is too small');
         return false;
       }
-      if (length - 1 === k){
+      if (length - 1 === k) {
         console.log(current.value);
         return current.value;
       }
