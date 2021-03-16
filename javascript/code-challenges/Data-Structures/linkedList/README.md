@@ -1,4 +1,4 @@
-# Singly Linked List
+# Linked List
 <!-- Short summary or background information -->
 - Represents series of nodes connected by pointer.
 - Each node has a value and next property
@@ -111,6 +111,21 @@
   - continue to next node and repeat
 - return false if there is no match
 
+##### zip(list1, list2)
+
+- create a zip function that takes in 2 lists as 2 different parameters
+- create a new instance of a list by calling linked list class
+- set a counter to determine which list is smaller
+- start at the head for both lists
+- create to variables that are set to the head of both lists
+  - while counter is greater than 0
+  - reduce the counter
+  - append to the new list a node from each list
+  - traverse the linked list by reassigning the values of the 'current' value
+  - repeat this while loop until counter is no longer greater than 0
+- check to see if either list has a remainder of nodes; then add them to the new linkedlist
+- return linked list
+
 ### BIG O
 
 - insertFront(value):
@@ -145,6 +160,10 @@
   - SPACE: O(n)
   - TIME: O(n)
 
+- zip(list1, list2);
+  - SPACE: O(n)
+  - TIME: O(n)
+  
 ## API
 <!-- Description of each method publicly available to your Linked List -->
 - `.insertFront(value)`
@@ -171,9 +190,14 @@
 - `.kthFromEnd(k)`
   - print out value of node from given k value space away from the end of the linked list
 
+- `zip(list1, list2)`
+  - receives 2 lists, combinding the two into one list by alternating between lists
+
 ## Collaborations
 
 - Terrence Simms
+- Mark Duenas
 
 ![WHITEBOARD](./Whiteboard.jpg)
 ![WHITEBOARD](./kthFromEnd.jpg)
+![WHITEBOARD](./zip.jpg)
