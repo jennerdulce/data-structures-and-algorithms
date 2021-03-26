@@ -6,7 +6,7 @@ module.exports = function zip(list1, list2) {
   let newList = new LinkedList();
   let counter;
 
-  if (!list1.head || !list2.head){
+  if (!list1.head || !list2.head) {
     return false;
   }
 
@@ -42,26 +42,31 @@ module.exports = function zip(list1, list2) {
   }
   return newList;
 
-  // IN COLLABORATION WITH MARK
-  // let firstCurrent = list1.head;
-  // let secondCurrent = list2.head;
-  // let firstNext;
-  // let secondNext;
-  // while (firstCurrent && secondCurrent) {
-  //   firstNext = firstCurrent.next;
-  //   secondNext = secondCurrent.next;
-  //   secondCurrent.next = firstNext;
-  //   firstCurrent.next = secondCurrent;
-  //   if (firstNext === null) {
-  //     secondCurrent = secondNext;
-  //     break;
-  //   }
-  //   firstCurrent = firstNext;
-  //   secondCurrent = secondNext;
-  // }
-  // if (secondCurrent) {
-  //   firstCurrent.next = secondCurrent;
-  // }
-  // list2.head = secondCurrent;
-  // return list1;
+
 };
+
+// IN COLLABORATION WITH MARK
+// let firstCurrent = list1.head;
+// let secondCurrent = list2.head;
+// let firstNext;
+// let secondNext;
+// while(firstCurrent && secondCurrent) {
+//   firstNext = firstCurrent.next;
+//   secondNext = secondCurrent.next;
+//   // secondCurrent.next = firstNext;
+//   // firstCurrent.next = secondCurrent;
+//   if (firstNext){
+//     secondCurrent.next = firstNext;
+//     firstCurrent.next = secondCurrent;
+//   }
+//   else if(firstNext === null) {
+//     break;
+//   }
+//   firstCurrent = firstNext;
+//   secondCurrent = secondNext;
+// }
+// if(secondCurrent) {
+//   firstCurrent.next = secondCurrent;
+// }
+// list2.head = secondCurrent;
+// return list1;

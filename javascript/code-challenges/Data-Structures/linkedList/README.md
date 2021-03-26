@@ -166,6 +166,7 @@
   
 ## API
 <!-- Description of each method publicly available to your Linked List -->
+
 - `.insertFront(value)`
   - inserts a new node to the beginning of the string
 
