@@ -37,3 +37,7 @@ Each day, you'll add one new file to this folder to do your work for the day's a
 - [Code Challenge: Class 10 - Stacks and Queues](./javascript/code-challenges/Data-Structures/stacksAndQueus)
 
 - [Code Challenge: Class 11 - Queue With Stacks](./javascript/code-challenges/Data-Structures/queueWithStacks)
+
+- [Code Challenge: Class 12 - First in First Out Animal Shelter](./javascript/code-challenges/Data-Structures/fifoAnimalShelter)
+
+- [Code Challenge: Class 13 - Multi Bracket Validation](./javascript/code-challenges/multiBracketValidation)
