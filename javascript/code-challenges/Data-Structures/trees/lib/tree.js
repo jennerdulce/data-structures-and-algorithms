@@ -7,23 +7,23 @@ class BinaryTree {
     this.root = null;
   }
 
-  preOrder(node, nodes=[]) {
+  preOrder(node, nodes = []) {
     nodes.push(node.value);
-    if(node.left) {this.preOrder(node.left, nodes);}
-    if(node.right) {this.preOrder(node.right, nodes);}
+    if (node.left) { this.preOrder(node.left, nodes); }
+    if (node.right) { this.preOrder(node.right, nodes); }
     return nodes;
   }
 
-  inOrder(node, nodes=[]) {
-    if(node.left) {this.inOrder(node.left, nodes);}
+  inOrder(node, nodes = []) {
+    if (node.left) { this.inOrder(node.left, nodes); }
     nodes.push(node.value);
-    if(node.right) {this.inOrder(node.right, nodes);}
+    if (node.right) { this.inOrder(node.right, nodes); }
     return nodes;
   }
 
-  postOrder(node, nodes=[]) {
-    if(node.left) {this.postOrder(node.left, nodes);}
-    if(node.right) {this.postOrder(node.right, nodes);}
+  postOrder(node, nodes = []) {
+    if (node.left) { this.postOrder(node.left, nodes); }
+    if (node.right) { this.postOrder(node.right, nodes); }
     nodes.push(node.value);
     return nodes;
   }
@@ -48,25 +48,30 @@ class BinarySearchTree extends BinaryTree {
   }
 
   contains(value) {
-    // O(n)
-    // let nodes = this.preOrder(this.root);
-    // if (nodes.includes(value)){
-    //   return true;
-    // } else {
-    //   return false;
-    // }
     let current = this.root;
-    while(current){
-      if (value === current.value){
+    while (current) {
+      if (value === current.value) {
         return true;
       }
-      if(value > current.value){
+      if (value > current.value) {
         current = current.right;
       } else {
         current = current.left;
       }
     }
     return false;
+  }
+
+  findMaximumValue(node, largest = 0) {
+    let queue = [];
+    queue.push(this.root);
+    while (queue.length) {
+      let currentNode = queue.shift();
+      largest = currentNode.value > largest ? currentNode.value : largest;
+      if (currentNode.left) { queue.push(currentNode.left); }
+      if (currentNode.right) { queue.push(currentNode.right); }
+    }
+    return largest;
   }
 }
 

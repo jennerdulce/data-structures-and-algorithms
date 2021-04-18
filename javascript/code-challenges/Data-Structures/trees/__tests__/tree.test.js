@@ -37,4 +37,8 @@ describe('Tree Tests', () => {
   it('Can successfully return a collection from a postOrder traversal' , () => {
     expect(newTree.postOrder(newTree.root)).toEqual([3, 6, 4, 11, 22, 12, 9]);
   });
+
+  it('Can successfully return the maximum value within the tree' , () => {
+    expect(newTree.findMaximumValue(newTree.root)).toEqual(22);
+  });
 });
