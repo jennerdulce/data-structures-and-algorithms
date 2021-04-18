@@ -27,6 +27,19 @@ class BinaryTree {
     nodes.push(node.value);
     return nodes;
   }
+
+  breadthFirst() {
+    let nodes = [];
+    let queue = [];
+    queue.push(this.root);
+    while (queue.length) {
+      let currentNode = queue.shift();
+      nodes.push(currentNode.value);
+      if (currentNode.left) { queue.push(currentNode.left); }
+      if (currentNode.right) { queue.push(currentNode.right); }
+    }
+    return nodes;
+  }
 }
 
 class BinarySearchTree extends BinaryTree {

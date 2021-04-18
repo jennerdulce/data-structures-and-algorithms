@@ -50,6 +50,17 @@
 - if there is a `node.right` traverse to the right and continue doing so by recursion
 - push the current node into the default empty `nodes` array when both `node.left` and `node.right` are `null`.
 
+##### breadthFirst()
+
+- create a `nodes` array to place node values
+- create a `queue` which will FIFO and add nodes in a specific order
+- start by pushing root into the queue
+- while there are nodes within the queue
+  - pop of the front of the queue and compare the value to the largest variable
+  - swap the value of largest if current node value is greater than the largest value
+  - add left and right nodes to the queue and repeat the process
+- return the `nodes` array
+
 #### BinarySearchTree
 
 ##### .add(value, current=this.root)
@@ -113,6 +124,11 @@
   - SPACE: O(w)
   - TIME: O(n)
 
+- `.breadthFirst()`
+  - prints out nodes from left to right starting at the root
+  - SPACE: O(w)
+  - TIME: O(n)
+
 ### Binary Search Tree
 
 - `.add(value, current=this.root)`
@@ -130,5 +146,6 @@
   - SPACE: O(1)
   - TIME: O(n)
   
-![WHITEBOARD](./Whiteboard.jpg)
-![WHITEBOARD](./findLargest.png)
+![WHITEBOARD](./assets/Whiteboard.jpg)
+![WHITEBOARD](./assets/findLargest.png)
+![WHITEBOARD](./assets/BreadthFirst.jpg)
