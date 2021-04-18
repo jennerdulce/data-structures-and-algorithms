@@ -73,6 +73,16 @@
   - if `value` is less than `current.value` traverse left
   - returns false if value is not within the tree
 
+##### .findMaximumValue(node, largest=0)
+
+- use logic similar to finding breadthFirst
+- start by pushing the of a tree into the queue
+- while there are nodes within the queue
+  - pop of the front of the queue and compare the value to the largest variable
+  - swap the value of largest if current node value is greater than the largest value
+  - add left and right nodes to the queue and repeat the process
+- return the largest node value
+
 ## API
 <!-- Description of each method publicly available to your Linked List -->
 
@@ -90,19 +100,35 @@
 
 - `.preOrder(node, nodes=[])`
   - prints out nodes at the initial point of changes with priority from the left to the right
+  - SPACE: O(h)
+  - TIME: O(n)
 
 - `.inOrder(node, nodes=[])`
   - prints out nodes in order
+  - SPACE: O(h)
+  - TIME: O(n)
 
 - `.postOrder(node, nodes=[])`
   - prints out nodes from left to right starting at the highest row
+  - SPACE: O(w)
+  - TIME: O(n)
 
-### Binary Search Tree:
+### Binary Search Tree
 
 - `.add(value, current=this.root)`
   - adds a node to the tree
+  - SPACE: O(1)
+  - TIME: O(n)
 
 - `.contains(value)`
   - verifies to see if node is in tree
+  - SPACE: O(1)
+  - TIME: O(n)
+
+- `.findMaximumValue(node, largest=0)`
+  - finds the maximum value within a the tree
+  - SPACE: O(1)
+  - TIME: O(n)
   
 ![WHITEBOARD](./Whiteboard.jpg)
+![WHITEBOARD](./findLargest.png)
