@@ -38,6 +38,10 @@ describe('Tree Tests', () => {
     expect(newTree.postOrder(newTree.root)).toEqual([3, 6, 4, 11, 22, 12, 9]);
   });
 
+  it('Can successfully return a collection in breadth first order' , () => {
+    expect(newTree.breadthFirst()).toEqual([9, 4, 12, 3, 6, 11, 22]);
+  });
+
   it('Can successfully return the maximum value within the tree' , () => {
     expect(newTree.findMaximumValue(newTree.root)).toEqual(22);
   });
