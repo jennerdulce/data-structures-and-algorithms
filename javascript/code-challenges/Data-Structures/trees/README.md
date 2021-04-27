@@ -94,6 +94,21 @@
   - add left and right nodes to the queue and repeat the process
 - return the largest node value
 
+#### fizzBuzz(node)
+
+- start by passing a COPY of a root of a premade tree as an argument
+- create a tree
+- assign the copy of original tree node to the root of newly created tree
+- created a helper function `walk` to traverse and assign new values to tree nodes
+- if divisible by 3 and 5 -> fizzbuzz
+- if divisible by 3 -> fizz
+- if divisible by 5 -> buzz
+- else change int to string
+- if node has children
+  - traverse through children and use helper function recursively
+- initiate process by invoking helper function with root of the new tree
+- return the newly created tree
+
 ## API
 <!-- Description of each method publicly available to your Linked List -->
 
@@ -145,7 +160,14 @@
   - finds the maximum value within a the tree
   - SPACE: O(1)
   - TIME: O(n)
+
+### fizzBuzz
+
+- finds the maximum value within a the tree
+  - SPACE: O(h)
+  - TIME: O(n)
   
 ![WHITEBOARD](./assets/Whiteboard.jpg)
 ![WHITEBOARD](./assets/findLargest.png)
 ![WHITEBOARD](./assets/BreadthFirst.jpg)
+![WHITEBOARD](./assets/fizzBuzz.png)
