@@ -60,19 +60,25 @@ class BinarySearchTree extends BinaryTree {
     return current;
   }
 
-  contains(value) {
-    let current = this.root;
-    while (current) {
-      if (value === current.value) {
-        return true;
-      }
-      if (value > current.value) {
-        current = current.right;
-      } else {
-        current = current.left;
-      }
-    }
+  contains(value, node = this.root) {
+    // recursion
+    if (value === node.value) { return true; }
+    if (value > node.value) { this.contains(value, node.right); }
+    if (value < node.value) { this.contains(value, node.left); }
     return false;
+
+    // let current = this.root;
+    // while (current) {
+    //   if (value === current.value) {
+    //     return true;
+    //   }
+    //   if (value > current.value) {
+    //     current = current.right;
+    //   } else {
+    //     current = current.left;
+    //   }
+    // }
+    // return false;
   }
 
   findMaximumValue(node, largest = 0) {
@@ -89,3 +95,22 @@ class BinarySearchTree extends BinaryTree {
 }
 
 module.exports = BinarySearchTree;
+
+
+// let karyTreeFizzBuzz = (kTree) => {
+//   let newTree = new Node(kTree);
+//   let trek = (node) => {
+//     if (node.children) {
+//       node.children.forEach(child => {
+//         if (child.val % 15 === 0) { child.val = `FizzBuzz`; }
+//         else if (child.val % 3 === 0) { child.val = `Fizz`; }
+//         else if (child.val % 5 === 0) { child.val = `Buzz`; }
+//       });
+//     }
+//     if (node.children) { node.children.forEach(child => { trek(child) }); }
+//   };
+//   trek(newTree);
+//   // console.log(JSON.stringify(newTree, null, 4));
+//   console.log('KTREE', kTree)
+//   return JSON.stringify(newTree, null, 2)
+// };
