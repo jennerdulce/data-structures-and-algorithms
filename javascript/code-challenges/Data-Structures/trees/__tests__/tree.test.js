@@ -77,15 +77,15 @@ describe('Tree Tests', () => {
   it('Can successfully before FizzBuzz on a tree.', () => {
 
     let x = Object.assign({}, rootNode);
-    let node = fizzBuzz(x);
-    console.log(JSON.stringify(node, undefined, 2));
-    expect(node.root.value).toEqual('Fizz');
-    expect(node.root.children[0].value).toEqual('Buzz');
-    expect(node.root.children[0].children[0].value).toEqual('1');
-    expect(node.root.children[0].children[1].value).toEqual('2');
-    expect(node.root.children[1].value).toEqual('FizzBuzz');
-    expect(node.root.children[1].children[0].value).toEqual('Buzz');
-    expect(node.root.children[1].children[1].value).toEqual('11');
-    expect(node.root.children[1].children[2].value).toEqual('Fizz');
+    let anotherTree = fizzBuzz(x);
+    console.log(JSON.stringify(anotherTree, undefined, 2));
+    expect(anotherTree.root.value).toEqual('Fizz');
+    expect(anotherTree.root.children[0].value).toEqual('Buzz');
+    expect(anotherTree.root.children[0].children[0].value).toEqual('1');
+    expect(anotherTree.root.children[0].children[1].value).toEqual('2');
+    expect(anotherTree.root.children[1].value).toEqual('FizzBuzz');
+    expect(anotherTree.root.children[1].children[0].value).toEqual('Buzz');
+    expect(anotherTree.root.children[1].children[1].value).toEqual('11');
+    expect(anotherTree.root.children[1].children[2].value).toEqual('Fizz');
   });
 });
