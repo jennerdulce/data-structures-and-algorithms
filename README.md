@@ -41,3 +41,11 @@ Each day, you'll add one new file to this folder to do your work for the day's a
 - [Code Challenge: Class 12 - First in First Out Animal Shelter](./javascript/code-challenges/Data-Structures/fifoAnimalShelter)
 
 - [Code Challenge: Class 13 - Multi Bracket Validation](./javascript/code-challenges/multiBracketValidation)
+
+- [Code Challenge: Class 16 - Maximum Value Binary Tree](./javascript/code-challenges/Data-Structures/trees)
+
+- [Code Challenge: Class 17 - Breadth-first Traversal](./javascript/code-challenges/Data-Structures/trees)
+
+- [Code Challenge: Class 18 - FizzBuzz on K-ary Tree](./javascript/code-challenges/Data-Structures/trees)
+
+- [Code Challenge: Class 26 - Insertion Sort](./javascript/code-challenges/insertionSort)
