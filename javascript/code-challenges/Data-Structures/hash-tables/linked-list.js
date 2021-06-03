@@ -102,28 +102,6 @@ class LinkedList {
     return result;
   }
 
-  findGet(value) {
-    let current = this.head;
-    while (current) {
-      if (current.value === value) {
-        return current;
-      }
-      current = current.next;
-    }
-    return false
-  }
-
-  findHas(value) {
-    let current = this.head;
-    while (current) {
-      if (current.value === value) {
-        return true;
-      }
-      current = current.next;
-    }
-    return false
-  }
-
   reverse() {
     let current = this.head;
     let prev = null;

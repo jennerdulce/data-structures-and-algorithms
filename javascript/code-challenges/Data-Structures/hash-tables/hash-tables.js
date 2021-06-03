@@ -22,7 +22,7 @@ class HashMap {
 
   // Return a number that equates to a bucket index
   hash(key) {
-    let sumOfKeyLetters = key.split('').reduce( (acc, val) => {
+    let sumOfKeyLetters = key.split('').reduce((acc, val) => {
       let cc = val.charCodeAt(0);
       let num = acc + cc;
       return num;
@@ -37,7 +37,7 @@ class HashMap {
   set(key, value) {
     let hash = this.hash(key); // should return a number that is an index of this.map
 
-    if( ! this.map[hash] ) {
+    if (!this.map[hash]) {
       this.map[hash] = new LinkedList();
     }
 
@@ -49,47 +49,69 @@ class HashMap {
 
   // Return the value for the key from the HT
   get(key) {
+    let LL;
     // 1: hash the key
     let hash = this.hash(key);
-    console.log('hash', hash);
-    console.log('this.map', this.map[hash]);
     // 2: Get the value of this.map[hash]
-    if(this.map[hash]){
-      this.map[hash].findGet(key);
+    if (this.map[hash]) {
+      LL = this.map[hash];
+      let node = LL.head;
+      // 3: Traverse the linked list and find the actual one (because ... collisions)
+      while (node) {
+        if (node.value[key]) {
+          // 4: Return what we find
+          return node;
+        }
+        node = node.next;
+      }
+      // 4: Return what we find
+    } else {
+      return null;
     }
-    // 3: Traverse the linked list and find the actual one (because ... collisions)
-
-    // 4: Return what we find
   }
 
   // return a bool if it's in the HT
   has(key) {
+    let LL;
     // 1: hash the key
     let hash = this.hash(key);
     // 2: Get the value of this.map[hash]
-    if(this.map[hash]){
-      this.map[hash].findHas(key);
+    if (this.map[hash]) {
+      LL = this.map[hash];
+      let node = LL.head;
+      // 3: Traverse the linked list and find the actual one (because ... collisions)
+      while (node) {
+        if (node.value[key]) {
+          // 4: Return what we find
+          return true;
+        }
+        node = node.next;
+      }
+      // 4: Return what we find
+    } else {
+      return null;
     }
-    // 3: Traverse the linked list and find the actual one (because ... collisions)
-    // 4: Return true or false
   }
 }
 
-
 // classically -- 1024
-let people = new HashMap(100);
-people.set('Anne', 'Student');
-people.set('Taylor', 'Student');
-people.set('Michael', 'Student');
-people.set('Mark', 'Student');
-people.set('TJ', 'Student');
-people.set('Jenner', 'Student');
-people.set('Nassir', 'Student');
-people.set('Dawit', 'Student');
-people.set('Rosie', 'Dog');
-console.log(people.get('Mark'));
+// let people = new HashMap(4);
+// people.set('Anne', 'Student');
+// people.set('Taylor', 'Student');
+// people.set('Michael', 'Student');
+// people.set('Mark', 'Student');
+// people.set('TJ', 'Student');
+// people.set('Jenner', 'Student');
+// people.set('Nassir', 'Student');
+// people.set('Dawit', 'Student');
+// people.set('Rosie', 'Dog');
+// console.log(people.get('Mark'));
+// console.log(people.has('Anne'));
+// console.log(people.has('Rosie'));
 
-// Violation of all things holy
+// // Violation of all things holy
 // people.map.forEach( (data,i) => {
 //   console.log(i, data && data.print());
 // });
+
+module.exports = HashMap;
