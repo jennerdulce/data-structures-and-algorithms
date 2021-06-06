@@ -32,3 +32,5 @@
   - SPACE: O(n)
 
 ![WHITEBOARD](./Whiteboard.jpg)
+
+- Collaborated with Mark Duenas, Terrence Sims, and Arthur Lozano
