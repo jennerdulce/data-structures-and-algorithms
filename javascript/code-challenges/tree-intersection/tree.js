@@ -8,6 +8,7 @@ class BinaryTree {
   preOrder() {
     let nodes = [];
 
+
     let _walk = (node) => {
       nodes.push(node.value); // add node once leaf is found on left
 
@@ -20,9 +21,13 @@ class BinaryTree {
       }
     };
 
-    _walk(this.root);
+    if (this.root) {
+      _walk(this.root);
+      return nodes;
 
-    return nodes;
+    } else {
+      return null;
+    }
   }
 
   inOrderWithoutHelper(node, nodes = []) {
