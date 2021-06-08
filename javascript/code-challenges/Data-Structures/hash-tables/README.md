@@ -85,7 +85,6 @@ Write tests to prove the following functionality:
   - return true if it is
   - else return null
 
-  
 #### API
 <!-- Description of each method publicly available to your Linked List -->
 
@@ -140,3 +139,5 @@ Write tests to prove the following functionality:
 - has(key):
   - SPACE: O(1)
   - TIME: O(1)
+
+![WHITEBOARD](./Whiteboard.jpg)
