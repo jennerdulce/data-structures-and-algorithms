@@ -60,6 +60,21 @@ Utilize the Single-responsibility principle: any methods you write should be cle
 
 - Retruns the size of the Graph
 
+##### businessTrip(graph, arr)
+
+- Set some variables
+  - Variable to keep track of weight between verticies
+  - Index
+  - Neighbors of verticies
+  - A Boolean to see if the neighbor is valid
+- Loop through the passed in array
+  - Obtain a list of the neighbors of the current index
+  - For each of the neighbors, check to see if the next index of the array is a neighbor
+  - If it is true, change the boolean statement to verify that the next index of the array is in face a neighbor and add the weight to the total
+  - If the boolean statement wasnt triggered in the previous, then the trip is not possible.. return a false statement
+- Continue on to the next item in the array and reset the boolean to false
+- Return true when finished
+
 #### Vertex
 
 - Creates an Vertex object with a property of value
@@ -98,6 +113,11 @@ Utilize the Single-responsibility principle: any methods you write should be cle
 
 - size():
   - SPACE: O(1)
-  - TIME: O(1)
+  - TIME: O(1
+ 
+- businessTrip(graph, arr):
+  - SPACE: O(1)
+  - TIME: O(n^2)
+  
   
 ![WHITEBOARD](./Whiteboard.png)
