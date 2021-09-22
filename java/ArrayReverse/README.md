@@ -12,6 +12,6 @@
   - The time for my algorithm depends on how big the array is.
   - At worst case scenario will take O(n)
 
-- Space: O(1)
+- Space: O(1) (-->ADDITIONAL SPACE <--)
   - My algorithm compeletes the challenge inline, utilizing the same array that was passed in.
   - We are not creating a new array.
