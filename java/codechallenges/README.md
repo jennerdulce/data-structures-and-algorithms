@@ -54,7 +54,7 @@
   - If empty add the node to the head of the Linked List
 - If not empty:
   - Start at head of Linked List
-  - Create a while loop to loop through nodes until it reaches the end of the linked list
+  - Create a while loop to loop through nodes until it reaches the end of the Linked List
     - Assign node as the current nodes next value
 
 ### `.includes(int)`
@@ -78,3 +78,53 @@
     - Continue to the next node and repeat
   - Concatenate 'NULL' to the string after the while loop
     - Return the string
+
+### `.insertBefore(int value, int newValue)`
+
+- Create a new node with the given `newValue`
+- Start from the head of the Linked List
+- Initially check to see if the head node matches with the given `value`
+  - Create a variable to hold the value of the previous head
+  - Set the head to the newly created node
+  - Set the next property of the head to the previous head.
+- Create a while loop to loop through nodes
+  - If the CURRENT NEXT VALUE equals value we are looking for
+    - Set `next` property of newly created node to `next` property of current node
+    - Set the current nodes next property to the newly created node
+    - Return that the node has been successfully added
+  - Otherwise, move on to the next node and repeat
+- Return null if value is not in Linked List
+
+### insertAfter(int value, int newValue)
+
+- Create a new node with the given `newValue`
+- Start from the head of the Linked List
+- Initially check to see if the head node matches with the given `value`
+  - Create a variable to hold the value of the previous head
+  - Set the head to the newly created node
+  - Set the next property of the head to the previous head.
+- Create a while loop to loop through nodes
+  - If the CURRENT VALUE equals value we are looking for
+    - Set `next` property of newly created node to `next` property of the current node
+    - Set the current nodes next property to the newly created node
+    - Return that the node has been successfully added
+  - Otherwise, move on to the next node and repeat
+- Return null if value is not in Linked List
+
+### delete(value)
+
+- Start from the head of the Linked List
+- Check to see if Linked List is empty
+  - If empty, return a message saying the Linked List is empty
+- Check to see if head of the Linked List matches the `value` given
+- Create a while loop to loop through nodes
+  - If current.next.value equals the value wanted
+    - Set temp variable to current.next.next, to retrieve the `next` of the node that will be deleted
+    - Set the `next` value of the current node to the temp variable
+- Return that the node is not in the Linked List
+
+## Whiteboards
+
+![WHITEBOARD](./assets/insertBefore.png)
+![WHITEBOARD](./assets/insertAfter.png)
+![WHITEBOARD](./assets/delete.png)
