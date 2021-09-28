@@ -15,37 +15,60 @@ class LibraryTest {
 
   @Test void add_new_node() {
     LinkedList newLL = new LinkedList();
-    newLL.insert(999);
+    newLL.append(999);
     assertEquals(true, newLL.head.value == 999, "Should create tie in first insert to the head of the linked list");
     assertEquals(999, newLL.head.value, "Should create tie in first insert to the head of the linked list");
   }
 
   @Test void add_second_new_node() {
     LinkedList newLL = new LinkedList();
-    newLL.insert(999);
-    newLL.insert(111);
+    newLL.append(999);
+    newLL.append(111);
     assertEquals(true, newLL.head.value == 999, "Should add the second node to the head");
     assertEquals(111, newLL.head.next.value, "Should add the second node to the head");
   }
 
   @Test void includes_value() {
     LinkedList newLL = new LinkedList();
-    newLL.insert(999);
-    newLL.insert(111);
-    newLL.insert(777);
+    newLL.append(999);
+    newLL.append(111);
+    newLL.append(777);
     boolean isTrue = newLL.includes(111);
     boolean isFalse = newLL.includes(8);
     assertEquals(true, isTrue, "Should return true because value is in the linked list");
     assertEquals(false, isFalse, "Should return false because value is NOT in the linked list");
   }
 
-  @Test void return_linkedlist_values() {
+  @Test void insert_before_value() {
     LinkedList newLL = new LinkedList();
-    newLL.insert(999);
-    newLL.insert(111);
-    newLL.insert(777);
-    String expectedResult = "{ 999 } -> { 111 } -> { 777 } -> NULL";
+    newLL.append(1);
+    newLL.append(2);
+    newLL.append(3);
+    newLL.insertBefore(2, 999);
+    String expectedResult = "{ 1 } -> { 999 } -> { 2 } -> { 3 } -> NULL";
     String actualResult = newLL.toString();
-    assertEquals(expectedResult, actualResult, "Should return a string with all of the nodes");
+    assertEquals(expectedResult, actualResult, "Should add the  new node before the given value");
+  }
+
+  @Test void insert_after_value() {
+    LinkedList newLL = new LinkedList();
+    newLL.append(1);
+    newLL.append(2);
+    newLL.append(3);
+    newLL.insertAfter(2, 999);
+    String expectedResult = "{ 1 } -> { 2 } -> { 999 } -> { 3 } -> NULL";
+    String actualResult = newLL.toString();
+    assertEquals(expectedResult, actualResult, "Should add the new node after the given value");
+  }
+
+  @Test void delete_node() {
+    LinkedList newLL = new LinkedList();
+    newLL.append(1);
+    newLL.append(2);
+    newLL.append(3);
+    newLL.delete(2);
+    String expectedResult = "{ 1 } -> { 3 } -> NULL";
+    String actualResult = newLL.toString();
+    assertEquals(expectedResult, actualResult, "Should delete the node with the given value");
   }
 }
