@@ -36,6 +36,10 @@
   - TIME: O(n)
   - SPACE: O(1)
 
+- `.append(value, newValue)`
+  - SPACE: O(n)
+  - TIME: O(n)
+
 - `.includes(int)`
   - TIME: O(n)
   - SPACE: O(1)
@@ -43,6 +47,22 @@
 - `.toString()`
   - TIME: O(n)
   - SPACE: O(n)
+
+- `.delete(value)`
+  - SPACE: O(n)
+  - TIME: O(n)
+
+- `.insertBefore(value, newValue)`
+  - SPACE: O(n)
+  - TIME: O(n)
+
+- `.insertAfter(value, newValue)`
+  - SPACE: O(n)
+  - TIME: O(n)
+
+- `.kthFromEnd(k)`
+  - SPACE: O(n)
+  - TIME: O(n)
 
 ## API
 <!-- Description of each method publicly available to your Linked List -->
@@ -95,7 +115,7 @@
   - Otherwise, move on to the next node and repeat
 - Return null if value is not in Linked List
 
-### insertAfter(int value, int newValue)
+### `.insertAfter(int value, int newValue)`
 
 - Create a new node with the given `newValue`
 - Start from the head of the Linked List
@@ -111,7 +131,7 @@
   - Otherwise, move on to the next node and repeat
 - Return null if value is not in Linked List
 
-### delete(value)
+### `.delete(value)`
 
 - Start from the head of the Linked List
 - Check to see if Linked List is empty
@@ -123,8 +143,19 @@
     - Set the `next` value of the current node to the temp variable
 - Return that the node is not in the Linked List
 
+### `.kthFromEnd(int)`
+
+- Check the length of the Linked LIst
+- If k is longer than Linked List length
+- Return an error
+- Subtract length - 1 check to see if it equals k
+return the value
+- Else decrement length by 1 and move on to the next node
+- Return null
+
 ## Whiteboards
 
 ![WHITEBOARD](./assets/insertBefore.png)
 ![WHITEBOARD](./assets/insertAfter.png)
 ![WHITEBOARD](./assets/delete.png)
+![WHITEBOARD](./assets/kthFromEnd.png)

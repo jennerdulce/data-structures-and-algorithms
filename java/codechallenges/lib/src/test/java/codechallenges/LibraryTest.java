@@ -71,4 +71,14 @@ class LibraryTest {
     String actualResult = newLL.toString();
     assertEquals(expectedResult, actualResult, "Should delete the node with the given value");
   }
+
+  @Test void kth_from_the_end() {
+    LinkedList newLL = new LinkedList();
+    newLL.append(1);
+    newLL.append(2);
+    newLL.append(3);
+    String expectedResult = "2";
+    String actualResult = newLL.kthFromEnd(1);
+    assertEquals(expectedResult, actualResult, "Should return the value of the node kth from the end (starting at 0)");
+  }
 }

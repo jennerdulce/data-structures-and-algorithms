@@ -98,6 +98,33 @@ public class LinkedList {
     return false;
   }
 
+  public int length(){
+    Node currentNode = this.head;
+    int length = 0;
+    while(currentNode != null){
+      currentNode = currentNode.next;
+      length++;
+    }
+    return length;
+  }
+
+
+  public String kthFromEnd(int k) {
+    Node currentNode = this.head;
+    int length = this.length();
+    while(currentNode != null){
+      if(length < k){
+        return "K is larger than the size of the Linked List";
+      }
+      if(length - 1 == k){
+        return "" + currentNode.value;
+      }
+      length--;
+      currentNode = currentNode.next;
+    }
+    return "" + currentNode.value;
+  }
+
   // toString()
   @Override
   public String toString(){
