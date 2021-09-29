@@ -7,19 +7,5 @@ import codechallenges.linkedList.LinkedList;
 
 public class Library {
     public static void main(String[] args){
-      LinkedList newLL = new LinkedList();
-      newLL.append(1);
-      newLL.append(2);
-      newLL.append(3);
-      System.out.println(newLL.insertBefore(2, 999));
-      System.out.println(newLL.toString());
-
-      LinkedList newLLL = new LinkedList();
-      newLLL.append(1);
-      newLLL.append(2);
-      newLLL.append(3);
-
-      System.out.println(newLLL.delete(2));
-      System.out.println(newLLL.toString());
     }
 }

@@ -20,6 +20,9 @@ public class LinkedList {
   public String insertBefore(int value, int newValue){
     Node newNode = new Node(newValue);
     Node currentNode = this.head;
+    if(currentNode == null){
+      return "This Linked List is empty";
+    }
     if(currentNode.value == value){
       Node oldHead = this.head;
       this.head = newNode;
@@ -42,6 +45,9 @@ public class LinkedList {
   public String insertAfter(int value, int newValue){
     Node newNode = new Node(newValue);
     Node currentNode = this.head;
+    if(currentNode == null){
+      return "This Linked List is empty";
+    }
     if(this.head != null){
       while(currentNode != null){
         if(currentNode.value == value){
@@ -61,6 +67,9 @@ public class LinkedList {
   // Delete
   public String delete(int value){
     Node currentNode = this.head;
+    if(currentNode == null){
+      return "Linked List is empty";
+    }
     if(currentNode.value == value){
       Node newHead = currentNode.next;
       this.head = newHead;
@@ -87,6 +96,33 @@ public class LinkedList {
       }
     }
     return false;
+  }
+
+  public int length(){
+    Node currentNode = this.head;
+    int length = 0;
+    while(currentNode != null){
+      currentNode = currentNode.next;
+      length++;
+    }
+    return length;
+  }
+
+
+  public String kthFromEnd(int k) {
+    Node currentNode = this.head;
+    int length = this.length();
+    while(currentNode != null){
+      if(length < k){
+        return "K is larger than the size of the Linked List";
+      }
+      if(length - 1 == k){
+        return "" + currentNode.value;
+      }
+      length--;
+      currentNode = currentNode.next;
+    }
+    return "" + currentNode.value;
   }
 
   // toString()
