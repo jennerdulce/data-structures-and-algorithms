@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class LibraryTest {
     @Test void creates_new_linkedlist() {
-      LinkedList newLL = new LinkedList();
+      LinkedList<T> newLL = new LinkedList();
       assertEquals(true, newLL instanceof LinkedList, "Should create a new Linked List");
     }
 
@@ -80,5 +80,9 @@ class LibraryTest {
     String expectedResult = "2";
     String actualResult = newLL.kthFromEnd(1);
     assertEquals(expectedResult, actualResult, "Should return the value of the node kth from the end (starting at 0)");
+  }
+
+  @Test void zip_two_linked_lists() {
+   // Will enter once I get generic values down.
   }
 }

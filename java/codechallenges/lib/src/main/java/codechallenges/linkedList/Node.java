@@ -1,10 +1,11 @@
 package codechallenges.linkedList;
 
-public class Node {
-  public int value;
-  public Node next = null;
+public class Node<T> {
+  public T value;
+  Node<T> next = null;
 
-  Node(int value){
+  public Node(T value){
+
     this.value = value;
   }
 }

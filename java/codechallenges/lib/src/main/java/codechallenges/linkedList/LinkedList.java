@@ -1,11 +1,11 @@
 package codechallenges.linkedList;
 
-public class LinkedList {
-  public Node head = null;
+public class LinkedList<T> {
+  public Node<T> head = null;
 
   // insert() OR append()
-  public void append(int value){
-    Node newNode = new Node(value);
+  public void append(T value){
+    Node<T> newNode = new Node(value);
     if(this.head != null){
       Node currentNode = this.head;
       while(currentNode.next != null){
@@ -17,14 +17,14 @@ public class LinkedList {
     }
   }
 
-  public String insertBefore(int value, int newValue){
-    Node newNode = new Node(newValue);
-    Node currentNode = this.head;
+  public String insertBefore(T value, T newValue){
+    Node<T> newNode = new Node(newValue);
+    Node<T> currentNode = this.head;
     if(currentNode == null){
       return "This Linked List is empty";
     }
     if(currentNode.value == value){
-      Node oldHead = this.head;
+      Node<T> oldHead = this.head;
       this.head = newNode;
       this.head.next = oldHead;
       return "Node added to the head of the Linked List";
@@ -42,9 +42,9 @@ public class LinkedList {
   }
 
   // insertAfter()
-  public String insertAfter(int value, int newValue){
-    Node newNode = new Node(newValue);
-    Node currentNode = this.head;
+  public String insertAfter(T value, T newValue){
+    Node<T> newNode = new Node(newValue);
+    Node<T> currentNode = this.head;
     if(currentNode == null){
       return "This Linked List is empty";
     }
@@ -65,8 +65,8 @@ public class LinkedList {
   }
 
   // Delete
-  public String delete(int value){
-    Node currentNode = this.head;
+  public String delete(T value){
+    Node<T> currentNode = this.head;
     if(currentNode == null){
       return "Linked List is empty";
     }
@@ -86,8 +86,8 @@ public class LinkedList {
   }
 
   // includes()
-  public boolean includes(int value){
-    Node currentNode = this.head;
+  public boolean includes(T value){
+    Node<T> currentNode = this.head;
     while(currentNode != null){
       if (currentNode.value == value){
         return true;
@@ -99,7 +99,7 @@ public class LinkedList {
   }
 
   public int length(){
-    Node currentNode = this.head;
+    Node<T> currentNode = this.head;
     int length = 0;
     while(currentNode != null){
       currentNode = currentNode.next;
@@ -109,20 +109,45 @@ public class LinkedList {
   }
 
 
-  public String kthFromEnd(int k) {
-    Node currentNode = this.head;
+  public String kthFromEnd(T k) {
+    Node<T> currentNode = this.head;
     int length = this.length();
     while(currentNode != null){
-      if(length < k){
+      if(length < (int) k){
         return "K is larger than the size of the Linked List";
       }
-      if(length - 1 == k){
+      if(length - 1 == (int) k){
         return "" + currentNode.value;
       }
       length--;
       currentNode = currentNode.next;
     }
     return "" + currentNode.value;
+  }
+
+  public LinkedList<T> zip(LinkedList<T> listA, LinkedList<T> listB) {
+    LinkedList<T> newList = new LinkedList();
+    Node<T> currentA = listA.head;
+    Node<T> currentB = listB.head;
+    if (currentA == null && currentB == null) {
+      // Do nothing
+    } else {
+      while (currentA != null || currentB != null) {
+        newList.append(currentA.value);
+        newList.append(currentB.value);
+        currentA = currentA.next;
+        currentB = currentB.next;
+      }
+      while (currentA != null) {
+        newList.append(currentA.value);
+        currentA = currentA.next;
+      }
+      while (currentB != null) {
+        newList.append(currentB.value);
+        currentB = currentB.next;
+      }
+    }
+    return newList;
   }
 
   // toString()

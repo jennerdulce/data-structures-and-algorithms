@@ -64,6 +64,10 @@
   - SPACE: O(n)
   - TIME: O(n)
 
+- `.zip(LinkedList, LinkedList)`
+  - SPACE: O(n)
+  - TIME: O(n)
+
 ## API
 <!-- Description of each method publicly available to your Linked List -->
 
@@ -153,9 +157,27 @@ return the value
 - Else decrement length by 1 and move on to the next node
 - Return null
 
+### `.zip(LinkedList, LinkedList)`
+
+- Create a method that takes in two linked lists as arguments
+- Create 2 variables that each start at the head of each linked list
+- Create if statement to catch if both linked lists are empty
+- Create a new Linked list
+- Create a while loop; while lista or list b do not equal null
+  - Add currentNode of list A to new LL
+  - Add currentNode of list B to new LL
+  - Traverse through each LL
+- Handle when one list runs out
+- While list currentA does not = null
+  - Add currentNode a to the new LL
+- while list B does not = nul
+  - Add currentNode to the new LL
+- Return new LL
+
 ## Whiteboards
 
 ![WHITEBOARD](./assets/insertBefore.png)
 ![WHITEBOARD](./assets/insertAfter.png)
 ![WHITEBOARD](./assets/delete.png)
 ![WHITEBOARD](./assets/kthFromEnd.png)
+![WHITEBOARD](./assets/zip.png)
