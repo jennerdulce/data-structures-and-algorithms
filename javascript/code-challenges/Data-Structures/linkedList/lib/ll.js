@@ -37,6 +37,15 @@ class LinkedList {
     }
     return this;
   }
+  // Java insertFront
+  // Node newNode = new Node(value);
+  // if(this.head != null){
+  //   Node oldHead = this.head;
+  //   this.head = newNode;
+  //   this.head.next = oldHead;
+  // } else {
+  //   this.head = newNode;
+  // }
 
   append(value) {
     let node = new Node(value);
