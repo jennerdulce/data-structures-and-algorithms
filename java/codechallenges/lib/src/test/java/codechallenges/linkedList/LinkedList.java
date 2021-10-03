@@ -5,9 +5,9 @@ public class LinkedList<T>{
 
   // insert() OR append()
   public void append(T value){
-    Node<T> newNode = new Node(value);
+    Node<T> newNode = new Node<>(value);
     if(this.head != null){
-      Node currentNode = this.head;
+      Node<T> currentNode = this.head;
       while(currentNode.next != null){
         currentNode = currentNode.next;
       }
@@ -17,8 +17,19 @@ public class LinkedList<T>{
     }
   }
 
+  public void insertFront(T value){
+    Node<T> newNode = new Node<>(value);
+    if(this.head != null){
+      Node<T> previousHead = this.head;
+      newNode.next = previousHead;
+      this.head = newNode;
+      } else {
+      this.head = newNode;
+    }
+  }
+
   public String insertBefore(T value, T newValue){
-    Node<T> newNode = new Node(newValue);
+    Node<T> newNode = new Node<>(newValue);
     Node<T> currentNode = this.head;
     if(currentNode == null){
       return "This Linked List is empty";

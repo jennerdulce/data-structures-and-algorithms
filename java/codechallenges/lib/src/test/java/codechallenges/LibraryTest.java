@@ -4,32 +4,35 @@
 package codechallenges;
 
 import codechallenges.linkedList.LinkedList;
+import codechallenges.stacksAndQueues.Queue;
+import codechallenges.stacksAndQueues.Stack;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class LibraryTest {
     @Test void creates_new_linkedlist() {
-      LinkedList<T> newLL = new LinkedList();
+      // cannot instantiate a generic thing
+      LinkedList<Integer> newLL = new LinkedList<>();
       assertEquals(true, newLL instanceof LinkedList, "Should create a new Linked List");
     }
 
   @Test void add_new_node() {
-    LinkedList newLL = new LinkedList();
+    LinkedList<Integer> newLL = new LinkedList<>();
     newLL.append(999);
-    assertEquals(true, newLL.head.value == 999, "Should create tie in first insert to the head of the linked list");
+    assertTrue(newLL.head.value == 999, "Should create tie in first insert to the head of the linked list");
     assertEquals(999, newLL.head.value, "Should create tie in first insert to the head of the linked list");
   }
 
   @Test void add_second_new_node() {
-    LinkedList newLL = new LinkedList();
+    LinkedList<Integer> newLL = new LinkedList<>();
     newLL.append(999);
     newLL.append(111);
-    assertEquals(true, newLL.head.value == 999, "Should add the second node to the head");
+    assertTrue(newLL.head.value == 999, "Should add the second node to the head");
     assertEquals(111, newLL.head.next.value, "Should add the second node to the head");
   }
 
   @Test void includes_value() {
-    LinkedList newLL = new LinkedList();
+    LinkedList<Integer> newLL = new LinkedList<>();
     newLL.append(999);
     newLL.append(111);
     newLL.append(777);
@@ -39,8 +42,18 @@ class LibraryTest {
     assertEquals(false, isFalse, "Should return false because value is NOT in the linked list");
   }
 
+  @Test void insert_front() {
+    LinkedList<Integer> newLL = new LinkedList<>();
+    newLL.append(1);
+    newLL.append(2);
+    newLL.insertFront(999);
+    String expectedResult = "{ 999 } -> { 1 } -> { 2 } -> NULL";
+    String actualResult = newLL.toString();
+    assertEquals(expectedResult, actualResult, "Should insert new node to the front");
+  }
+
   @Test void insert_before_value() {
-    LinkedList newLL = new LinkedList();
+    LinkedList<Integer> newLL = new LinkedList<>();
     newLL.append(1);
     newLL.append(2);
     newLL.append(3);
@@ -51,7 +64,7 @@ class LibraryTest {
   }
 
   @Test void insert_after_value() {
-    LinkedList newLL = new LinkedList();
+    LinkedList<Integer> newLL = new LinkedList<>();
     newLL.append(1);
     newLL.append(2);
     newLL.append(3);
@@ -62,7 +75,7 @@ class LibraryTest {
   }
 
   @Test void delete_node() {
-    LinkedList newLL = new LinkedList();
+    LinkedList<Integer> newLL = new LinkedList<>();
     newLL.append(1);
     newLL.append(2);
     newLL.append(3);
@@ -73,7 +86,7 @@ class LibraryTest {
   }
 
   @Test void kth_from_the_end() {
-    LinkedList newLL = new LinkedList();
+    LinkedList<Integer> newLL = new LinkedList<>();
     newLL.append(1);
     newLL.append(2);
     newLL.append(3);
@@ -83,6 +96,96 @@ class LibraryTest {
   }
 
   @Test void zip_two_linked_lists() {
-   // Will enter once I get generic values down.
+      // How to go about creating a function
+    LinkedList<Integer> firstLL = new LinkedList<>();
+    firstLL.append(1);
+    firstLL.append(2);
+    firstLL.append(3);
+    LinkedList<Integer> secondLL = new LinkedList<>();
+    secondLL.append(1);
+    secondLL.append(2);
+    secondLL.append(3);
   }
+
+  @Test void push_on_to_stack(){
+    Stack<Integer> newStack = new Stack<>();
+//    newStack.push(999);
+  }
+
+  @Test void push_multiple_stack(){
+    Stack<Integer> newStack = new Stack<>();
+    newStack.push(999);
+    newStack.push(111);
+  }
+
+  @Test void pop_off_stack(){
+    Stack<Integer> newStack = new Stack<>();
+    newStack.push(999);
+    newStack.push(111);
+    newStack.pop();
+  }
+
+  @Test void empty_stack(){
+    Stack<Integer> newStack = new Stack<>();
+    newStack.push(999);
+    newStack.push(111);
+    newStack.pop();
+    newStack.pop();
+  }
+
+  @Test void peek_stack(){
+    Stack<Integer> newStack = new Stack<>();
+    newStack.peek();
+  }
+
+  @Test void create_new_stack(){
+    Stack<Integer> newStack = new Stack<>();
+  }
+
+  @Test void stack_exceptions(){
+    Stack<Integer> newStack = new Stack<>();
+    newStack.peek();
+    newStack.pop();
+  }
+
+  @Test void enqueue(){
+    Queue<Integer> newQueue = new Queue<>();
+    newQueue.enqueue(1);
+  }
+
+  @Test void enqueue_multiple_queue(){
+    Queue<Integer> newQueue = new Queue<>();
+    newQueue.enqueue(1);
+    newQueue.enqueue(2);
+  }
+
+  @Test void dequeue(){
+    Queue<Integer> newQueue = new Queue<>();
+    newQueue.enqueue(1);
+    newQueue.dequeue();
+  }
+
+  @Test void peek_queue(){
+    Queue<Integer> newQueue = new Queue<>();
+    newQueue.peek();
+  }
+
+  @Test void multiple_dequeue(){
+    Queue<Integer> newQueue = new Queue<>();
+    newQueue.enqueue(1);
+    newQueue.enqueue(2);
+    newQueue.dequeue();
+    newQueue.dequeue();
+  }
+
+  @Test void create_new_queue(){
+    Queue<Integer> newQueue = new Queue<>();
+  }
+
+  @Test void queue_exceptions(){
+    Queue<Integer> newQueue = new Queue<>();
+    newQueue.peek();
+    newQueue.pop();
+  }
+
 }

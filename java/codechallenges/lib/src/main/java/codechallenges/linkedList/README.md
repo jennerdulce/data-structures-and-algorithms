@@ -176,8 +176,8 @@ return the value
 
 ## Whiteboards
 
-![WHITEBOARD](./assets/insertBefore.png)
-![WHITEBOARD](./assets/insertAfter.png)
-![WHITEBOARD](./assets/delete.png)
-![WHITEBOARD](./assets/kthFromEnd.png)
-![WHITEBOARD](./assets/zip.png)
+![WHITEBOARD](../../../../../../assets/insertBefore.png)
+![WHITEBOARD](../../../../../../assets/insertAfter.png)
+![WHITEBOARD](../../../../../../assets/delete.png)
+![WHITEBOARD](../../../../../../assets/kthFromEnd.png)
+![WHITEBOARD](../../../../../../assets/zip.png)
