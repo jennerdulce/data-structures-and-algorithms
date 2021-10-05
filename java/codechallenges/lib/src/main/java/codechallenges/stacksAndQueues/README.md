@@ -67,7 +67,7 @@
 
 ##### .pop()
 
-- Remove item from stoage
+- Remove item from storage
 - Change top to last item on the list (which is technically the next item to be popped off)
 - Return stack
 
@@ -129,7 +129,7 @@
 #### API
 
 - Create a 'queue' class
-- Create 'front', 'rear', 'storage' propreties as part of the constructor
+- Create 'front', 'rear', 'storage' properties as part of the constructor
 
 ##### `.enqueue(item)`
 
@@ -140,15 +140,18 @@
 
 ##### `.dequeue()`
 
-- Remove item from stoage
+- Remove item from storage
 - Change top to last item on the list (which is technically the next item to be popped off)
-- Return stack
+- Return value of dequeued node
 
 ##### `.peek()`
 
-- If there is no top, return false
-- Return the top
+- If there is no front, return false
+- Return the front
 
 ##### `.isEmpty()`
 
-- If length of storage is less than one (is empty || 0) return true
+- If there is no front, return true; else return false.
+
+![WHITEBOARD](../assets/stack.png)
+![WHITEBOARD](../assets/queue.png)
