@@ -1,13 +1,13 @@
 package codechallenges.linkedList;
 
-public class LinkedList<T> {
+public class LinkedList<T>{
   public Node<T> head = null;
 
   // insert() OR append()
   public void append(T value){
-    Node<T> newNode = new Node(value);
+    Node<T> newNode = new Node<>(value);
     if(this.head != null){
-      Node currentNode = this.head;
+      Node<T> currentNode = this.head;
       while(currentNode.next != null){
         currentNode = currentNode.next;
       }
@@ -17,8 +17,17 @@ public class LinkedList<T> {
     }
   }
 
+  public void insertFront(T value){
+    Node<T> newNode = new Node<>(value);
+    if(this.head != null){
+      Node<T> previousHead = this.head;
+      newNode.next = previousHead;
+    }
+    this.head = newNode;
+  }
+
   public String insertBefore(T value, T newValue){
-    Node<T> newNode = new Node(newValue);
+    Node<T> newNode = new Node<>(newValue);
     Node<T> currentNode = this.head;
     if(currentNode == null){
       return "This Linked List is empty";
@@ -108,7 +117,6 @@ public class LinkedList<T> {
     return length;
   }
 
-
   public String kthFromEnd(T k) {
     Node<T> currentNode = this.head;
     int length = this.length();
@@ -125,31 +133,6 @@ public class LinkedList<T> {
     return "" + currentNode.value;
   }
 
-  public LinkedList<T> zip(LinkedList<T> listA, LinkedList<T> listB) {
-    LinkedList<T> newList = new LinkedList();
-    Node<T> currentA = listA.head;
-    Node<T> currentB = listB.head;
-    if (currentA == null && currentB == null) {
-      // Do nothing
-    } else {
-      while (currentA != null || currentB != null) {
-        newList.append(currentA.value);
-        newList.append(currentB.value);
-        currentA = currentA.next;
-        currentB = currentB.next;
-      }
-      while (currentA != null) {
-        newList.append(currentA.value);
-        currentA = currentA.next;
-      }
-      while (currentB != null) {
-        newList.append(currentB.value);
-        currentB = currentB.next;
-      }
-    }
-    return newList;
-  }
-
   // toString()
   @Override
   public String toString(){
@@ -163,3 +146,5 @@ public class LinkedList<T> {
     return output;
   }
 }
+
+
