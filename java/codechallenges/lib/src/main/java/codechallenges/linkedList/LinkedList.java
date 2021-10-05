@@ -117,7 +117,6 @@ public class LinkedList<T>{
     return length;
   }
 
-
   public String kthFromEnd(T k) {
     Node<T> currentNode = this.head;
     int length = this.length();
@@ -134,31 +133,6 @@ public class LinkedList<T>{
     return "" + currentNode.value;
   }
 
-  public LinkedList<T> zip(LinkedList<T> listA, LinkedList<T> listB) {
-    LinkedList<T> newList = new LinkedList();
-    Node<T> currentA = listA.head;
-    Node<T> currentB = listB.head;
-    if (currentA == null && currentB == null) {
-      // Do nothing
-    } else {
-      while (currentA != null || currentB != null) {
-        newList.append(currentA.value);
-        newList.append(currentB.value);
-        currentA = currentA.next;
-        currentB = currentB.next;
-      }
-      while (currentA != null) {
-        newList.append(currentA.value);
-        currentA = currentA.next;
-      }
-      while (currentB != null) {
-        newList.append(currentB.value);
-        currentB = currentB.next;
-      }
-    }
-    return newList;
-  }
-
   // toString()
   @Override
   public String toString(){
@@ -172,3 +146,5 @@ public class LinkedList<T>{
     return output;
   }
 }
+
+

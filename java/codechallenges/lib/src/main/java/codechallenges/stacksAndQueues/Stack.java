@@ -9,6 +9,10 @@ public class Stack<T> {
   public Node<T> top = null;
   public LinkedList<T> storage;
 
+  public Stack(){
+    this.storage = new LinkedList<>();
+  }
+
   public void push(T value){
     storage.insertFront(value);
     top = storage.head;

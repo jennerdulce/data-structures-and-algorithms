@@ -9,6 +9,10 @@ public class Queue<T> {
   public Node<T> front = null;
   public LinkedList<T> storage;
 
+  public Queue(){
+    this.storage = new LinkedList<>();
+  }
+
   public void enqueue(T value){
     storage.append(value);
     if (front == null){
