@@ -192,6 +192,45 @@
   - TIME: O(n)
   - SPACE: O(1)
 
-![WHITEBOARD](../assets/stack.png)
-![WHITEBOARD](../assets/queue.png)
-![WHITEBOARD](../assets/stackQueuePseudo.png)
+#### Animal Shelter
+
+- Create a class called AnimalShelter which holds only dogs and cats.
+- The shelter operates using a first-in, first-out approach.
+- Implement the following methods:
+- enqueue
+  - Arguments: animal
+    - animal can be either a dog or a cat object.
+- dequeue
+  - Arguments: pref
+    - pref can be either "dog" or "cat"
+  - Return: either a dog or a cat, based on preference.
+    - If pref is not "dog" or "cat" then return null.
+
+##### API
+
+- `.enqueue(Animal)`
+  - If the type of animal is either dog or cat; add into their respective queue
+    Else raise exception
+
+- `.dequeue(String dog/cat)`
+  - Create dequeue method that takes in dog or cat string
+  - If user entered in dog or cat; check to see if queue is empty
+  - If not empty, dequeue
+  - else return null
+
+##### Approach & Efficiency
+
+- `.enqueue(T value)`
+  - Pushes item into the end of the queue
+  - TIME: O(n)
+  - SPACE: O(1)
+
+- `.dequeue()`
+  - Removes item at the front of the queue
+  - TIME: O(1)
+  - SPACE: O(1)
+
+![WHITEBOARD](assets/stack.png)
+![WHITEBOARD](assets/queue.png)
+![WHITEBOARD](assets/stackQueuePseudo.png)
+![WHITEBOARD](assets/AnimalShelter.png)
