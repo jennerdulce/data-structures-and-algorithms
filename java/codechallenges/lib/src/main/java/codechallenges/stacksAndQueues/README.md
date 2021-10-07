@@ -230,7 +230,38 @@
   - TIME: O(1)
   - SPACE: O(1)
 
+#### Multi Bracket Validator
+
+- Write a function called validate brackets
+  - Arguments: string
+  - Return: boolean
+  representing whether or not the brackets in the string are balanced
+- There are 3 types of brackets:
+  - Round Brackets : ()
+  - Square Brackets : []
+  - Curly Brackets : {}
+
+##### API
+
+- `bracketValidator(String`
+  - Create a function with that accepts a string as a parameter
+  - Create for loop to start at the beginning of a string
+  - If the index of a string is any of the opening braces; add to the stack
+  - Else if index of the string is a closing brace of any kind, compare to see if it closes with what is on top of the stack
+  - If it is not the corresponding brace, return false
+  - Otherwise, remove the brace from the stack and contineu with the for loop
+  - If the stack does not equal null after the for loop. return false
+  - return true
+
+##### Approach & Efficiency
+
+- bracketValidator(String)
+  - Validates opening and closing brackets in a given string
+  - TIME: O(n)
+  - SPACE: O(1)
+
 ![WHITEBOARD](assets/stack.png)
 ![WHITEBOARD](assets/queue.png)
 ![WHITEBOARD](assets/stackQueuePseudo.png)
 ![WHITEBOARD](assets/AnimalShelter.png)
+![WHITEBOARD](assets/multiiBracket.png)
