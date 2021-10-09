@@ -28,5 +28,6 @@ public class AnimalShelter {
     } else {
       return null;
     }
+    return null;
   }
 }
