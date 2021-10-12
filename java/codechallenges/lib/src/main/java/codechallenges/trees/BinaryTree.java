@@ -6,7 +6,7 @@ import codechallenges.stacksAndQueues.Queue;
 import java.util.ArrayList;
 
 public class BinaryTree<T> {
-  Node<T> root;
+  public Node<T> root;
 
   public ArrayList<T> preOrder(Node<T> node, ArrayList<T> values){
     values.add(node.value);
@@ -16,15 +16,15 @@ public class BinaryTree<T> {
   }
 
   public ArrayList<T> inOrder(Node<T> node, ArrayList<T> values){
-    if(node.left != null) {this.preOrder(node.left, values);}
+    if(node.left != null) {this.inOrder(node.left, values);}
     values.add(node.value);
-    if(node.right != null) {this.preOrder(node.right, values);}
+    if(node.right != null) {this.inOrder(node.right, values);}
     return values;
   }
 
   public ArrayList<T> postOrder(Node<T> node, ArrayList<T> values){
-    if(node.left != null) {this.preOrder(node.left, values);}
-    if(node.right != null) {this.preOrder(node.right, values);}
+    if(node.left != null) {this.postOrder(node.left, values);}
+    if(node.right != null) {this.postOrder(node.right, values);}
     values.add(node.value);
     return values;
   }
