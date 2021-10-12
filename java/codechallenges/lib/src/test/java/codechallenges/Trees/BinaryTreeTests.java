@@ -108,4 +108,17 @@ public class BinaryTreeTests {
     expectedResult.add(8); expectedResult.add(3); expectedResult.add(30); expectedResult.add(1); expectedResult.add(5); expectedResult.add(44);
     assertEquals(expectedResult, newTree.breadthFirst());
   }
+
+  @Test
+  void find_max_value_test(){
+    BinarySearchTree<Integer> newTree = new BinarySearchTree<>();
+    newTree.add(8, newTree.root);
+    newTree.add(3, newTree.root);
+    newTree.add(30, newTree.root);
+    newTree.add(1, newTree.root);
+    newTree.add(5, newTree.root);
+    newTree.add(44, newTree.root);
+    ArrayList<Integer> values = new ArrayList<>();
+    assertEquals(44, newTree.findMaxValue(newTree.root));
+  }
 }

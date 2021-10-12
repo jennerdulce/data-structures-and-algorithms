@@ -80,6 +80,18 @@
   - If `value` is less than `current.value` traverse left
   - Returns false if value is not within the tree
 
+##### .findMax(Node)
+
+- Create an array to act as a pseudo Queue
+- Push the root into the queue
+- Create while loop, while queue is greater than 0
+  - Remove front of queue
+  - Compare to largest
+  - Add left and right nodes to the queue
+  - Repeat
+- Return largest
+
+
 ## API
 <!-- Description of each method publicly available to your Linked List -->
 
@@ -118,13 +130,19 @@
 ### Binary Search Tree
 
 - `.add(value, current=this.root)`
-  - adds a node to the tree
+  - Adds a node to the tree
   - SPACE: O(1)
   - TIME: O(n)
 
 - `.contains(value)`
-  - verifies to see if node is in tree
+  - Verifies to see if node is in the tree
   - SPACE: O(1)
   - TIME: O(n)
-  
+
+- `.findMax(Node)`
+  - Finds the MAX value in a tree
+  - SPACE: O(1)
+  - TIME: O(n)
+
 ![WHITEBOARD](./assets/Whiteboard.png)
+![WHITEBOARD](./assets/findMax.png)

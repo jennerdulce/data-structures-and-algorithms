@@ -2,6 +2,8 @@ package codechallenges.trees;
 
 import codechallenges.linkedList.Node;
 
+import java.util.ArrayList;
+
 public class BinarySearchTree<T extends Comparable<? super T>> extends BinaryTree<T> {
 
 
@@ -27,5 +29,18 @@ public class BinarySearchTree<T extends Comparable<? super T>> extends BinaryTre
     if(value.compareTo(currentNode.value) > 0){return this.contains(value, currentNode.right);}
     if(value.compareTo(currentNode.value) < 0){return this.contains(value, currentNode.left);}
     return false;
+  }
+
+  public Integer findMaxValue(Node<T> node){
+    Integer largest = Integer.MIN_VALUE;
+    ArrayList<Node> pseudoQueue = new ArrayList<>();
+    pseudoQueue.add(node);
+    while(pseudoQueue.size() > 0){
+      Node<T> currentNode = pseudoQueue.remove(0);
+      largest = largest.compareTo((Integer) currentNode.value) < 0  ? (Integer) currentNode.value : largest;
+      if(currentNode.left != null) {pseudoQueue.add(currentNode.left);}
+      if(currentNode.right != null) {pseudoQueue.add(currentNode.right);}
+    }
+    return largest;
   }
 }
