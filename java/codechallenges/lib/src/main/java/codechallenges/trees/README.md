@@ -91,6 +91,46 @@
   - Repeat
 - Return largest
 
+#### KaryTree
+
+##### .fizzBuzz(KaryTree<Integer>)
+
+- Create function that takes in a BST
+- Start at the root node
+- Clone the tree into a tree of strings
+  - In order to clone the tree
+  - You have to consider the adding algorithm to be able to handle strings
+  - When adding, check to see if the value of the node is a string
+  - If it is a string, convert to current node and node being added into integers and then make the comparison.
+- After tree has been cloned, traverse through the tree
+  - While traversing through the tree
+  - Create conditional if statements
+  convert number into string and check to see if fizz/buzz/fizzbuzz checks out
+    - If it does, change the value of the current node to fizz/buzz/fizzbuzz
+    - Else, ignore
+- return cloned tree with fizzbuzz
+
+##### .contains(value)
+
+- Start at the root
+- While currentNode is not null
+  - Compare to see if `value` that is passed in equals to `current.value`
+    - Return true if it is
+  - If `value` is greater than `current.value` traverse right
+  - If `value` is less than `current.value` traverse left
+  - Returns false if value is not within the tree
+
+##### .findMax(Node)
+
+- Create an array to act as a pseudo Queue
+- Push the root into the queue
+- Create while loop, while queue is greater than 0
+  - Remove front of queue
+  - Compare to largest
+  - Add left and right nodes to the queue
+  - Repeat
+- Return largest
+
 
 ## API
 <!-- Description of each method publicly available to your Linked List -->
@@ -144,5 +184,23 @@
   - SPACE: O(1)
   - TIME: O(n)
 
+### Kary Tree
+
+- `.fizzBuzz(KaryTree)`
+  - Converts a KaryTree and replaces numbers that are divisible by 3, 5, or both with "fizz", "buzz", or "fizzbuzz"
+  - SPACE: O(n)
+  - TIME: O(n^2)
+
+- `.contains(value)`
+  - Verifies to see if node is in the tree
+  - SPACE: O(1)
+  - TIME: O(n)
+
+- `.findMax(Node)`
+  - Finds the MAX value in a tree
+  - SPACE: O(1)
+  - TIME: O(n)
+
 ![WHITEBOARD](./assets/Whiteboard.png)
 ![WHITEBOARD](./assets/findMax.png)
+![WHITEBOARD](./assets/fizzBuzzKary.png)
