@@ -35,7 +35,6 @@ function merge(left, right, arr = []) {
       k++;
     }
   }
-  // console.log('merged', arr);
   return arr;
 }
 
