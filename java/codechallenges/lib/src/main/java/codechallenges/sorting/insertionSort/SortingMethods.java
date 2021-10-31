@@ -1,4 +1,4 @@
-package codechallenges.sorting;
+package codechallenges.sorting.insertionSort;
 
 public class SortingMethods {
   public int[] insertSort(int[] arr){

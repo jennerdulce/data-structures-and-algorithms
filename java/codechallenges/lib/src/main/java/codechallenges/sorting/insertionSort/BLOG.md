@@ -9,8 +9,8 @@
 - The algorithm starts by comparing the index of 1 with the index of 0
 - If the index at i is less than the index at j then the two numbers swap
 
-![Image here](two.png)
-![Image here](three.png)
+![Image here](assets/two.png)
+![Image here](assets/three.png)
 
 - Moving on to the next iteration
 - As i gets bigger, j also gets bigger
@@ -18,21 +18,21 @@
 - We always start by comparing the index of i with the index of j and swap them if the index at i is less than the index of j
 - It continues making comparisons like so
 
-![Image here](four.png)
-![Image here](five.png)
-![Image here](six.png)
-![Image here](seven.png)
+![Image here](assets/four.png)
+![Image here](assets/five.png)
+![Image here](assets/six.png)
+![Image here](assets/seven.png)
 
 - This cycle repeats for every iteration of the array of integers until sorted
 
 
-![Image here](eight.png)
-![Image here](nine.png)
-![Image here](ten.png)
-![Image here](eleven.png)
-![Image here](twelve.png)
-![Image here](thirteen.png)
-![Image here](end.png)
+![Image here](assets/eight.png)
+![Image here](assets/nine.png)
+![Image here](assets/ten.png)
+![Image here](assets/eleven.png)
+![Image here](assets/twelve.png)
+![Image here](assets/thirteen.png)
+![Image here](assets/end.png)
 
 ## Efficency
 

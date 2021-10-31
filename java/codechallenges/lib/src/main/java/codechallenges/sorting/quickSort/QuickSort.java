@@ -1,4 +1,4 @@
-package codechallenges.sorting.assets;
+package codechallenges.sorting.quickSort;
 
 public class QuickSort {
   public static int[] quickSort(int[] arr, int left, int right){

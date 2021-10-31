@@ -1,5 +1,5 @@
 # Quick Sort
 
-![Image here](walkthrough.png)
+![Image here](assets/walkthrough.png)
 
 - Description is in the posted image
