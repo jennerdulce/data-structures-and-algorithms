@@ -97,4 +97,36 @@ public class SortingTests {
     int[] expected = {4, 8, 15, 16, 23, 42};
     assertArrayEquals(expected, sortedArr);
   }
+
+  @Test void quick_sort_empty_test() {
+    // Expected Failure
+    //  assertArrayEquals(expected, sortedArr);
+  }
+
+  @Test void quick_sort_duplicates_test() {
+    // Edge Case Duplicates
+    QuickSort sort = new QuickSort();
+    int[] numArr = {1, 1, 1};
+    int[] sortedArr = sort.quickSort(numArr, 0, numArr.length -1);
+    int[] expected = {1, 1, 1};
+    assertArrayEquals(expected, sortedArr);
+  }
+
+  @Test void quick_sort_single_value_test() {
+    // Edge Case Single Value
+    QuickSort sort = new QuickSort();
+    int[] numArr = {1};
+    int[] sortedArr = sort.quickSort(numArr, 0, numArr.length -1);
+    int[] expected = {1};
+    assertArrayEquals(expected, sortedArr);
+  }
+
+  @Test void quick_sort_negative_number_test() {
+    // Edge Case Negative Numbers
+    QuickSort sort = new QuickSort();
+    int[] numArr = {1, 8, -9, 100, -50};
+    int[] sortedArr = sort.quickSort(numArr, 0, numArr.length -1);
+    int[] expected = {-50, -9, 1, 8, 100};
+    assertArrayEquals(expected, sortedArr);
+  }
 }
