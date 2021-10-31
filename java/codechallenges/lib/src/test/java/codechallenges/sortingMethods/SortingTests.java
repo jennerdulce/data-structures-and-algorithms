@@ -17,6 +17,38 @@ public class SortingTests {
     assertArrayEquals(expected, sortedArr);
   }
 
+  @Test void insertion_empty_test() {
+    // Expected Failure
+    //  assertArrayEquals(expected, sortedArr);
+  }
+
+  @Test void insertion_sort_duplicates_test() {
+    // Edge Case Duplicates
+    SortingMethods insertionSort = new SortingMethods();
+    int[] numArr = {1, 1, 1};
+    int[] sortedArr = insertionSort.insertSort(numArr);
+    int[] expected = {1, 1, 1};
+    assertArrayEquals(expected, sortedArr);
+  }
+
+  @Test void insertion_sort_single_value_test() {
+    // Edge Case Single Value
+    SortingMethods insertionSort = new SortingMethods();
+    int[] numArr = {1};
+    int[] sortedArr = insertionSort.insertSort(numArr);
+    int[] expected = {1};
+    assertArrayEquals(expected, sortedArr);
+  }
+
+  @Test void insertion_sort_negative_number_test() {
+    // Edge Case Negative Numbers
+    SortingMethods insertionSort = new SortingMethods();
+    int[] numArr = {1, 8, -9, 100, -50};
+    int[] sortedArr = insertionSort.insertSort(numArr);
+    int[] expected = {-50, -9, 1, 8, 100};
+    assertArrayEquals(expected, sortedArr);
+  }
+
   @Test void merge_sort_test() {
     // Happy Path
     MergeSort sort = new MergeSort();
