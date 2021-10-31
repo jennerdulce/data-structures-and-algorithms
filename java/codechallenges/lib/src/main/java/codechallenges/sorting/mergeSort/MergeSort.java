@@ -1,4 +1,4 @@
-package codechallenges.sorting;
+package codechallenges.sorting.mergeSort;
 
 import java.util.Arrays;
 
