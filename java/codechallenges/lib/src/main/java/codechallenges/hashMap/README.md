@@ -71,3 +71,7 @@ Implement a Hashtable Class with the following methods:
 ![WHITEBOARD](./assets/Whiteboard.png)
 ![WHITEBOARD](./assets/findMax.png)
 ![WHITEBOARD](./assets/fizzBuzzKary.png)
+
+## Notes
+
+- Based on Haustin Kimborough's code example today.
