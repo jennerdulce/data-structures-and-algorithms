@@ -80,6 +80,9 @@ public class HashMap<K, V> {
     ArrayList<Integer> numbers = new ArrayList<>();
     Node<Integer> treeOneRoot = treeOne.root;
     Node<Integer> treeTwoRoot = treeTwo.root;
+    if(treeOneRoot == null || treeTwoRoot ==  null){
+      return numbers;
+    }
     _walk(treeOneRoot, numbers);
     _walk(treeTwoRoot, numbers);
     return numbers;

@@ -5,6 +5,8 @@ import codechallenges.trees.BinarySearchTree;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class HashTableTest {
@@ -82,35 +84,83 @@ public class HashTableTest {
   @Test
   void tree_intersection_test() {
     BinarySearchTree<Integer> treeOne = new BinarySearchTree<>();
-    treeOne.add(150);
-    treeOne.add();
-    treeOne.add();
-    treeOne.add();
-    treeOne.add();
-    treeOne.add();
-    treeOne.add();
-    treeOne.add();
-    treeOne.add();
-    treeOne.add();
-    treeOne.add();
+    treeOne.add(150, treeOne.root);
+    treeOne.add(100, treeOne.root);
+    treeOne.add(250, treeOne.root);
+    treeOne.add(75, treeOne.root);
+    treeOne.add(160, treeOne.root);
+    treeOne.add(125, treeOne.root);
+    treeOne.add(175, treeOne.root);
+    treeOne.add(200, treeOne.root);
+    treeOne.add(350, treeOne.root);
+    treeOne.add(300, treeOne.root);
+    treeOne.add(500, treeOne.root);
 
 
     BinarySearchTree<Integer> treeTwo = new BinarySearchTree<>();
-    treeTwo.add();
-    treeTwo.add();
-    treeTwo.add();
-    treeTwo.add();
-    treeTwo.add();
-    treeTwo.add();
-    treeTwo.add();
-    treeTwo.add();
-    treeTwo.add();
-    treeTwo.add();
-    treeTwo.add();
+    treeTwo.add(42, treeTwo.root);
+    treeTwo.add(100, treeTwo.root);
+    treeTwo.add(600, treeTwo.root);
+    treeTwo.add(15, treeTwo.root);
+    treeTwo.add(160, treeTwo.root);
+    treeTwo.add(125, treeTwo.root);
+    treeTwo.add(175, treeTwo.root);
+    treeTwo.add(600, treeTwo.root);
+    treeTwo.add(200, treeTwo.root);
+    treeTwo.add(4, treeTwo.root);
+    treeTwo.add(350, treeTwo.root);
+    treeTwo.add(500, treeTwo.root);
 
     HashMap<Integer, String> newHashMap = new HashMap<>(100);
+    ArrayList<Integer> result = newHashMap.treeIntersection(treeOne, treeTwo);
+    ArrayList<Integer> expectedResult = new ArrayList<>();
+    expectedResult.add(100);
+    expectedResult.add(160);
+    expectedResult.add(125);
+    expectedResult.add(175);
+    expectedResult.add(200);
+    expectedResult.add(350);
+    expectedResult.add(500);
+    assertEquals(expectedResult, result);
+  }
 
-    assertEquals("Hi", newHashMap.get(1));
-    assertEquals("Crash", newHashMap.get(2));
+  @Test
+  void tree_intersection_empty_tree_test() {
+    BinarySearchTree<Integer> treeOne = new BinarySearchTree<>();
+
+    BinarySearchTree<Integer> treeTwo = new BinarySearchTree<>();
+    treeTwo.add(42, treeTwo.root);
+    treeTwo.add(100, treeTwo.root);
+    treeTwo.add(600, treeTwo.root);
+    treeTwo.add(15, treeTwo.root);
+    treeTwo.add(160, treeTwo.root);
+    treeTwo.add(125, treeTwo.root);
+    treeTwo.add(175, treeTwo.root);
+    treeTwo.add(600, treeTwo.root);
+    treeTwo.add(200, treeTwo.root);
+    treeTwo.add(4, treeTwo.root);
+    treeTwo.add(350, treeTwo.root);
+    treeTwo.add(500, treeTwo.root);
+
+    HashMap<Integer, String> newHashMap = new HashMap<>(100);
+    int result = newHashMap.treeIntersection(treeOne, treeTwo).size();
+    assertEquals(0, result);
+  }
+
+  @Test
+  void tree_intersection_no_matching_test() {
+    BinarySearchTree<Integer> treeOne = new BinarySearchTree<>();
+    treeOne.add(150, treeOne.root);
+    treeOne.add(100, treeOne.root);
+    treeOne.add(15, treeOne.root);
+
+    BinarySearchTree<Integer> treeTwo = new BinarySearchTree<>();
+    treeTwo.add(42, treeTwo.root);
+    treeTwo.add(600, treeTwo.root);
+    treeTwo.add(160, treeTwo.root);
+
+    HashMap<Integer, String> newHashMap = new HashMap<>(100);
+    int result = newHashMap.treeIntersection(treeOne, treeTwo).size();
+    assertEquals(0, result);
   }
 }
