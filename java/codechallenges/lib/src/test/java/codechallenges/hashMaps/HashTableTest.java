@@ -1,6 +1,7 @@
 package codechallenges.hashMaps;
 
 import codechallenges.hashMap.HashMap;
+import codechallenges.trees.BinarySearchTree;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -73,5 +74,43 @@ public class HashTableTest {
     HashMap<String, Boolean> newHashMap3 = new HashMap<>(size3);
     String result3 = newHashMap3.repeatedWords(testString3);
     System.out.println(result3);
+    assertEquals("a", result);
+    assertEquals("summer", result2);
+    assertEquals("it", result3);
+  }
+
+  @Test
+  void tree_intersection_test() {
+    BinarySearchTree<Integer> treeOne = new BinarySearchTree<>();
+    treeOne.add(150);
+    treeOne.add();
+    treeOne.add();
+    treeOne.add();
+    treeOne.add();
+    treeOne.add();
+    treeOne.add();
+    treeOne.add();
+    treeOne.add();
+    treeOne.add();
+    treeOne.add();
+
+
+    BinarySearchTree<Integer> treeTwo = new BinarySearchTree<>();
+    treeTwo.add();
+    treeTwo.add();
+    treeTwo.add();
+    treeTwo.add();
+    treeTwo.add();
+    treeTwo.add();
+    treeTwo.add();
+    treeTwo.add();
+    treeTwo.add();
+    treeTwo.add();
+    treeTwo.add();
+
+    HashMap<Integer, String> newHashMap = new HashMap<>(100);
+
+    assertEquals("Hi", newHashMap.get(1));
+    assertEquals("Crash", newHashMap.get(2));
   }
 }

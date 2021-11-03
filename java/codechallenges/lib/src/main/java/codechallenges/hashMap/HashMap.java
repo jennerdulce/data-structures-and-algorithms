@@ -3,8 +3,11 @@ package codechallenges.hashMap;
 
 import codechallenges.linkedList.LinkedList;
 import codechallenges.linkedList.Node;
+import codechallenges.trees.BinarySearchTree;
+import codechallenges.trees.BinaryTree;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class HashMap<K, V> {
   public ArrayList<LinkedList<HashMapPair<K, V>>> bucketArrayList;
@@ -71,6 +74,25 @@ public class HashMap<K, V> {
       this.add((K) word.toLowerCase(), (V) "test");
     }
     return null;
+  }
+
+  public ArrayList<Integer> treeIntersection(BinarySearchTree<Integer> treeOne, BinarySearchTree<Integer> treeTwo) {
+    ArrayList<Integer> numbers = new ArrayList<>();
+    Node<Integer> treeOneRoot = treeOne.root;
+    Node<Integer> treeTwoRoot = treeTwo.root;
+    _walk(treeOneRoot, numbers);
+    _walk(treeTwoRoot, numbers);
+    return numbers;
+  }
+
+  public void _walk(Node<Integer> node, List<Integer> numbers){
+    if(this.contains((K) node.value)){
+      numbers.add(node.value);
+    } else {
+      this.add((K) node.value, (V) "hi");
+    }
+    if(node.left != null) {this._walk(node.left, numbers);}
+    if(node.right != null) {this._walk(node.right, numbers);}
   }
 
   // Sometimes hashCode can be negative in Java, hence the abs()
