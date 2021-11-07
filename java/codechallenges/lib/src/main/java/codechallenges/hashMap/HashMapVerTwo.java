@@ -9,11 +9,11 @@ import codechallenges.trees.BinaryTree;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HashMap<K, V> {
+public class HashMapVerTwo<K, V> {
   public ArrayList<LinkedList<HashMapPair<K, V>>> bucketArrayList;
   public int size;
 
-  public HashMap(int size){
+  public HashMapVerTwo(int size){
     if (size < 1){
       throw new IllegalArgumentException("Hash Map must have a size of 1 or greater");
     }
