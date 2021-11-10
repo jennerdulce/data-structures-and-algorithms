@@ -29,6 +29,12 @@ Implement a Hashtable Class with the following methods:
 - size
   - Arguments: none
   - Returns the total number of nodes in the graph
+- breadthFirst
+  - Arguments: Vertex<T>
+  - Returns all of the verticies in the graph in breadth first order
+- businessTrip
+  - Arguments: Graph<T> graph, ArrayList<Vertex<T>> arr
+  - Returns the cost if the business trip is possible
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
@@ -67,6 +73,36 @@ Implement a Hashtable Class with the following methods:
 
 - Return the size of the graph
 
+##### breadthFirst
+
+- Create a method that takes in a vertex
+- Create a list to use as a queue
+- Create a list to hold all of the verticies, will be returning this list later
+- Create a list to account for all of the verticies that have already been visited
+- Add the first vertex into the queue
+- While loop through the queue
+- Remove the vertex at index 0 from the queue
+- Check to see if this vertex hasa already been visited
+- Else Add this vertex to 'verticies' and 'visited' lists
+- Check to see if this vertex has neighbors
+  - If true, loop through each neighbor and add them to the queue
+- Return the list of verticies
+
+##### businessTrip
+
+- Set some variables
+  - Variable to keep track of weight between verticies
+  - Index
+  - Neighbors of verticies
+  - A Boolean to see if the neighbor is valid
+- Loop through the passed in array
+  - Obtain a list of the neighbors of the current index
+  - For each of the neighbors, check to see if the next index of the array is a neighbor
+  - If it is true, change the boolean statement to verify that the next index of the array is in face a neighbor and add the weight to the total
+  - If the boolean statement wasnt triggered in the previous, then the trip is not possible.. return a false statement
+- Continue on to the next item in the array and reset the boolean to false
+- Return true when finished
+
 ## API
 <!-- Description of each method publicly available to your Linked List -->
 
@@ -103,7 +139,15 @@ Implement a Hashtable Class with the following methods:
   - SPACE: O(1)
   - TIME: O(1)
 
+- `.breadthFirst(Vertex<T> vertex)`
+  - Return all of the verticies in breadthFirst order
+  - SPACE: O(n)
+  - TIME: O(n)
 
-## Whiteboard
+ - `.businessTrip(Graph<T> graph, ArrayList<Vertex<T>> arr)`
+   - Returns the cost if the business trip is possible
+   - SPACE: O(n)
+   - TIME: O(n)
 
 ![WHITEBOARD](./assets/whiteboard.png)
+![WHITEBOARD](./assets/businessTrip.png)
