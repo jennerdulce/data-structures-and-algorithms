@@ -35,6 +35,9 @@ Implement a Hashtable Class with the following methods:
 - businessTrip
   - Arguments: Graph<T> graph, ArrayList<Vertex<T>> arr
   - Returns the cost if the business trip is possible
+ - traversal
+   - Arguments: Node (starting point of search)
+   - Returns all of the nodes, depth first
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
@@ -103,6 +106,15 @@ Implement a Hashtable Class with the following methods:
 - Continue on to the next item in the array and reset the boolean to false
 - Return true when finished
 
+##### traversal
+
+- Add current vertex to list of verticies
+- If currentVertex does not have neighbors
+  - Return list of verticies
+- If currentVertex has neighbors
+  - For each neighbor, run the traversal
+- Return the list of veritices
+
 ## API
 <!-- Description of each method publicly available to your Linked List -->
 
@@ -146,8 +158,13 @@ Implement a Hashtable Class with the following methods:
 
  - `.businessTrip(Graph<T> graph, ArrayList<Vertex<T>> arr)`
    - Returns the cost if the business trip is possible
-   - SPACE: O(n)
+   - SPACE: O(log n)
    - TIME: O(n)
 
+ - `.traversal(Vertex<T> currentVertex, ArrayList<Vertex<T>> listOfVerticies)`
+   - Returns a list of nodes within the graph (depth first)
+   - SPACE: O(log n)
+   - TIME: O(n)
+   
 ![WHITEBOARD](./assets/whiteboard.png)
 ![WHITEBOARD](./assets/businessTrip.png)

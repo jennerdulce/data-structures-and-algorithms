@@ -100,6 +100,18 @@ public class Graph<T extends Comparable<? super T>>
     return "Cost: " + cost;
   }
 
+  ArrayList<Vertex<T>> traversal(Vertex<T> currentVertex, ArrayList<Vertex<T>> listOfVerticies){
+    listOfVerticies.add(currentVertex);
+     if(this.getNeighbors(currentVertex).size() == 0){
+       return listOfVerticies;
+     }
+     if(this.getNeighbors(currentVertex).size() > 0){
+       for(Edge<T> nextNode : this.getNeighbors(currentVertex)){
+         traversal(nextNode.destination, listOfVerticies);
+       }
+     }
+  }
+
   int size() {
     return this.size;
   }
